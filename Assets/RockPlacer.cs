@@ -25,7 +25,7 @@ public class RockPlacer : MonoBehaviour
             GameObject newRock = Instantiate(selectedRockPrefab, worldPosition2D, randomRotation, rocksParent.transform); //set as type rock?
         }
 
-        PreviewSelectedRock();
+        //PreviewSelectedRock();
     }
 
     public void PreviewSelectedRock()
