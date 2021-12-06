@@ -152,8 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca2c8a7e7a538442a3793edfaece43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected_rock: {fileID: 8071106094560360427, guid: 707138d990e289044ba75fc0f154d363, type: 3}
+  selectedRockPrefab: {fileID: 8071106094560360427, guid: 707138d990e289044ba75fc0f154d363, type: 3}
   rocksParent: {fileID: 2139523175}
+  rockPreview: {fileID: 0}
+  worldPosition2D: {x: 0, y: 0}
+  previewRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &393573436
 Transform:
   m_ObjectHideFlags: 0
