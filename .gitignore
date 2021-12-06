@@ -36,3 +36,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.log
+.idea/.idea.rock-stacker/.idea/workspace.xml
+.idea/.idea.rock-stacker/.idea/indexLayout.xml
