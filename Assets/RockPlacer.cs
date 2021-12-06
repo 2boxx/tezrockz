@@ -6,18 +6,31 @@ using Random = UnityEngine.Random;
 
 public class RockPlacer : MonoBehaviour
 {
-    [SerializeField] private GameObject selected_rock;
+    [SerializeField] private GameObject selectedRockPrefab;
 
     [SerializeField] private GameObject rocksParent;
 
+    [SerializeField] private GameObject rockPreview;
+    [SerializeField] private Vector2 worldPosition2D;
+    [SerializeField] private Quaternion previewRotation;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPosition2D = new Vector2(worldPosition.x, worldPosition.y);
+        
+        if (Input.GetMouseButton(1))
         {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 worldPosition2D = new Vector2(worldPosition.x, worldPosition.y);
             var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
-            GameObject newRock = Instantiate(selected_rock, worldPosition2D, randomRotation, rocksParent.transform); //set as type rock?
+            GameObject newRock = Instantiate(selectedRockPrefab, worldPosition2D, randomRotation, rocksParent.transform); //set as type rock?
         }
+
+        PreviewSelectedRock();
+    }
+
+    public void PreviewSelectedRock()
+    {
+        rockPreview.transform.position = worldPosition2D;
+        rockPreview.transform.rotation = previewRotation;
     }
 }
