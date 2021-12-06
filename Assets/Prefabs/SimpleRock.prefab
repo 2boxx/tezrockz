@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8071106094560360214}
   - component: {fileID: 8071106094560360425}
   - component: {fileID: 8071106094560360424}
+  - component: {fileID: 6225381634750797219}
   m_Layer: 0
   m_Name: SimpleRock
   m_TagString: Untagged
@@ -171,3 +172,16 @@ PolygonCollider2D:
       - {x: 0.56, y: -0.64}
       - {x: 0.56, y: -0.56}
       - {x: 0.64, y: -0.56}
+--- !u!114 &6225381634750797219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071106094560360427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bb2641b9ba8a74f92979e86bacb290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockData: {fileID: 11400000, guid: 528d72a650373954fbee491d71bda5b0, type: 2}
