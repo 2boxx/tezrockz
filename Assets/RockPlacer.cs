@@ -19,7 +19,7 @@ public class RockPlacer : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition2D = new Vector2(worldPosition.x, worldPosition.y);
         
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
             GameObject newRock = Instantiate(selectedRockPrefab, worldPosition2D, randomRotation, rocksParent.transform); //set as type rock?
