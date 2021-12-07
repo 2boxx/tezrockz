@@ -292,7 +292,7 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 5.45
+  m_XDamping: 11.57
   m_YDamping: 1.84
   m_ZDamping: 1
   m_TargetMovementOnly: 1
