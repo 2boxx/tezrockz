@@ -42,7 +42,7 @@ public class RockPlacer : MonoBehaviour
         
         
         //Store a rotation and update it based on mousewheel...
-        Debug.Log("Input.GetAxis(Mouse ScrollWheel) = " + Input.GetAxis("Mouse ScrollWheel"));
+//        Debug.Log("Input.GetAxis(Mouse ScrollWheel) = " + Input.GetAxis("Mouse ScrollWheel"));
         eulerRot = eulerRot + (Input.GetAxis("Mouse ScrollWheel") + Input.GetAxis("Horizontal")) * rotSpeed * Time.deltaTime;
         previewRotation =  quaternion.Euler(0f, 0f, eulerRot);
         //and show the preview.

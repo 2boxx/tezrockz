@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2708683053345266473}
   - component: {fileID: 5902126778424262296}
   - component: {fileID: 1854995646292971863}
+  - component: {fileID: 726669503220032202}
   m_Layer: 0
   m_Name: TestRock_4
   m_TagString: Untagged
@@ -76,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2310120008066900930, guid: 7ff1edc639eee614ca465bec2204b92c, type: 3}
+  m_Sprite: {fileID: -7111609808353109255, guid: 528500d5caf5c0c4798fae054985f2c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 4.8, y: 4.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +127,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4.8, y: 4.8}
-    newSize: {x: 0.48, y: 0.48}
+    newSize: {x: 4.8, y: 4.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -263,3 +264,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitParticles: {fileID: 1030154086116299943, guid: e591830b027859b4aa764fe9822d8e72, type: 3}
+--- !u!114 &726669503220032202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735112127136984040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bb2641b9ba8a74f92979e86bacb290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockData: {fileID: 11400000, guid: 528d72a650373954fbee491d71bda5b0, type: 2}
