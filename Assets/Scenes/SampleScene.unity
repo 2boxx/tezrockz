@@ -163,8 +163,10 @@ GameObject:
   m_Component:
   - component: {fileID: 393573436}
   - component: {fileID: 393573435}
+  - component: {fileID: 393573437}
+  - component: {fileID: 393573438}
   m_Layer: 0
-  m_Name: RockSpawner
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,12 +186,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedRockPrefab: {fileID: 2735112127136984040, guid: 589f93bdead50704d9527f0e60c5ab93, type: 3}
   rocksParent: {fileID: 2139523175}
-  rockPreview: {fileID: 0}
+  rockPreview: {fileID: 2735112127136984040, guid: 589f93bdead50704d9527f0e60c5ab93, type: 3}
   worldPosition2D: {x: 0, y: 0}
   eulerRot: 0
   previewRotation: {x: 0, y: 0, z: 0, w: 0}
   rotSpeed: 180
-  pointer: {fileID: 1720238918}
 --- !u!4 &393573436
 Transform:
   m_ObjectHideFlags: 0
@@ -205,6 +206,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393573437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393573434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21f80feeac888d46aaea2448208820d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &393573438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393573434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dccec5d45c219c4a967c42e113e7f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rocksManager: {fileID: 393573437}
+  cameraTarget: {fileID: 1720238918}
 --- !u!1 &459351170
 GameObject:
   m_ObjectHideFlags: 3
@@ -215,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459351171}
   - component: {fileID: 459351173}
-  - component: {fileID: 459351172}
+  - component: {fileID: 459351174}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -237,7 +264,19 @@ Transform:
   m_Father: {fileID: 688401768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &459351172
+--- !u!114 &459351173
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459351170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &459351174
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,19 +292,19 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 20
-  m_YDamping: 20
-  m_ZDamping: 0
-  m_TargetMovementOnly: 0
+  m_XDamping: 5.45
+  m_YDamping: 1.84
+  m_ZDamping: 1
+  m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 2
-  m_DeadZoneHeight: 0.974
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 2
-  m_SoftZoneHeight: 2
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -280,18 +319,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &459351173
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459351170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &493612578
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +412,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
@@ -404,18 +430,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dccec5d45c219c4a967c42e113e7f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1017,7 +1031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720238919}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: CameraTrackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,4 +1321,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21f80feeac888d46aaea2448208820d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeRocks: []

@@ -18,7 +18,7 @@ public class RockPlacer : MonoBehaviour
     private float eulerRot;
     [SerializeField] private Quaternion previewRotation;
     [SerializeField] private float rotSpeed;
-    [SerializeField] private GameObject pointer;
+    //[SerializeField] private GameObject pointer;
 
     private void Start()
     {
@@ -37,20 +37,30 @@ public class RockPlacer : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1))
         {
-            var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
-            GameObject newRock = Instantiate(selectedRockPrefab, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
+            SpawnRock();
         }
         
+        
+        //Store a rotation and update it based on mousewheel...
         eulerRot = eulerRot + Input.GetAxis("Mouse ScrollWheel") * rotSpeed * Time.deltaTime;
         previewRotation =  quaternion.Euler(0f, 0f, eulerRot);
-
+        //and show the preview.
         PreviewSelectedRock();
-        pointer.transform.position = worldPosition2D;
+        
+        //old camera system
+        //pointer.transform.position = worldPosition2D;
     }
 
     public void PreviewSelectedRock()
     {
         rockPreview.transform.position = worldPosition2D;
         rockPreview.transform.rotation = previewRotation;
+    }
+
+    void SpawnRock()
+    {
+        var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
+        GameObject newRockGameObject = Instantiate(selectedRockPrefab, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
+        RocksManager.instance.AddRock(newRockGameObject);
     }
 }
