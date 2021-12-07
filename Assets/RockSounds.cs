@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class OnHitSound : MonoBehaviour
+public class RockSounds : MonoBehaviour
 {
       public AudioClip hitSound;
      AudioSource _audioSource;

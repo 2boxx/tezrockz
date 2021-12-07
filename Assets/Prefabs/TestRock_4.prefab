@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5298602963377682919}
   - component: {fileID: 2708683053345266473}
   - component: {fileID: 5902126778424262296}
+  - component: {fileID: 1854995646292971863}
   m_Layer: 0
   m_Name: TestRock_4
   m_TagString: Untagged
@@ -249,3 +250,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 4f9f36bf0995561439e66f165554644b, type: 3}
+--- !u!114 &1854995646292971863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735112127136984040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69b345d9f3b6bc499919414a8297b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticles: {fileID: 1030154086116299943, guid: e591830b027859b4aa764fe9822d8e72, type: 3}
