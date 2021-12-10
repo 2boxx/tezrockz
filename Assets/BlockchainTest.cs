@@ -9,6 +9,9 @@ using TMPro;
 
 public class BlockchainTest : MonoBehaviour
 {
+    // public string currentWallet = "tz1brgKFnJLYa5xNw96sYo4Bt9oeDcwHU62R";
+    public TMP_InputField walletInputField;
+    
     public List<String> parsed;
 
     public TextMeshProUGUI testOutput;
@@ -19,7 +22,7 @@ public class BlockchainTest : MonoBehaviour
     {
         testOutput.text = "Loading...";
         //Obtener y reemplazar por wallet del usuario // Extraer address
-        string uri = "https://api.tzkt.io/v1/bigmaps/511/keys?key.address=tz1UqY2zsjxh3vCGXmBKRGLgESU4mgMJo1Sh&select=key";
+        string uri = "https://api.tzkt.io/v1/bigmaps/511/keys?key.address="+walletInputField.text+"&select=key";
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
