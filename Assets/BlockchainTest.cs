@@ -11,6 +11,8 @@ public class BlockchainTest : MonoBehaviour
 {
     // public string currentWallet = "tz1brgKFnJLYa5xNw96sYo4Bt9oeDcwHU62R";
     public TMP_InputField walletInputField;
+
+    public int contractID = 511;
     
     public List<String> parsed;
 
@@ -22,7 +24,7 @@ public class BlockchainTest : MonoBehaviour
     {
         testOutput.text = "Loading...";
         //Obtener y reemplazar por wallet del usuario // Extraer address
-        string uri = "https://api.tzkt.io/v1/bigmaps/511/keys?key.address="+walletInputField.text+"&select=key";
+        string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key";
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
@@ -35,7 +37,7 @@ public class BlockchainTest : MonoBehaviour
                 foreach (var s in objktIDs)
                 {
                     testOutput.text += s;
-                    testOutput.text += " \n ";
+                    testOutput.text += "\n";
                 }
             }
         }
