@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 1c21288d916d5ce49b786f3646f526e9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5775799483657745444
+    second: Hand_Selector_12x12_0
+  - first:
+      213: -5213498299188240814
+    second: Hand_Selector_12x12_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -91,202 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestRockx10_Spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1440
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fadde7ee8c7e4d90800000000000000
-      internalID: -7111609808353109255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 1440
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5e979aa9cb1e7440800000000000000
-      internalID: 4935412794609081950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 1440
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f34f6dcacc6c12fb0800000000000000
-      internalID: -4674236355858467777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 960
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 039c6ad4bf3186b00800000000000000
-      internalID: 821928902055610672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 960
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87b4c4c5f1fc77da0800000000000000
-      internalID: -5947057049320010888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 960
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e67e859bc72bd0250800000000000000
-      internalID: 5912578134562629486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 480
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f5205a524c9578e0800000000000000
-      internalID: -1696277875838147085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 480
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb825c212e791a060800000000000000
-      internalID: 6963013496124811455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 480
-        width: 480
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a2cd06f3d93f8340800000000000000
-      internalID: 4868173304739775139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TestRockx10_Spritesheet_9
+      name: Hand_Selector_12x12_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 480
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 736fa95588af74650800000000000000
-      internalID: 6217213274066974263
+      spriteID: cdb02ba98fc38dfa0800000000000000
+      internalID: -5775799483657745444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestRockx10_Spritesheet_10
+      name: Hand_Selector_12x12_1
       rect:
         serializedVersion: 2
-        x: 480
+        x: 12
         y: 0
-        width: 480
-        height: 480
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82fbfd5fe72ebd950800000000000000
-      internalID: 6475017924194058024
+      spriteID: 25e18cf4beee5a7b0800000000000000
+      internalID: -5213498299188240814
       vertices: []
       indices: 
       edges: []
