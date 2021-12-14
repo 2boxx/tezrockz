@@ -8,6 +8,8 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private RocksManager _rocksManager;
     [SerializeField] private GameObject cameraTarget;
     public float minimumY = 0f;
+    
+    
 
     private void LateUpdate()
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -20,6 +21,9 @@ public class RockPlacer : MonoBehaviour
     [SerializeField] private float rotSpeed;
 
     public bool mouseInGame;
+
+    public TextMeshProUGUI rockCountText;
+    private int _rockCount;
     //[SerializeField] private GameObject pointer;
 
     private void Start()
@@ -45,6 +49,8 @@ public class RockPlacer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SpawnRock();
+            _rockCount++;
+            rockCountText.text = _rockCount.ToString();
         }
 ;
         //Store a rotation and update it based on mousewheel...
