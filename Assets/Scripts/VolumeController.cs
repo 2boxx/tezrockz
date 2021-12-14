@@ -19,7 +19,6 @@ public class VolumeController : MonoBehaviour
     public Sprite IconMusicOff;
     
     [Header("Icon Volume FX")]
-
     public Image IconFX;
     public Sprite IconFXOn;
     public Sprite IconFXOff;
