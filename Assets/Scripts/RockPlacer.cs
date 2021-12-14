@@ -26,14 +26,33 @@ public class RockPlacer : MonoBehaviour
     private int _rockCount;
     //[SerializeField] private GameObject pointer;
 
+    public List<GameObject> availableRocks;
+
     private void Start()
+    {
+        SetupPreview();
+        previewRotation = Quaternion.identity;
+        
+    }
+
+    void SetupPreview()
     {
         rockPreview = Instantiate(selectedRockPrefab);
         rockPreview.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0.5f);
         rockPreview.GetComponent<Rigidbody2D>().isKinematic = true;
         rockPreview.GetComponent<Collider2D>().enabled = false;
-        previewRotation = Quaternion.identity;
-        
+    }
+
+    void UpdatePreview()
+    {
+        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockPrefab.GetComponent<SpriteRenderer>().sprite; //OPTIMIZE THIS!!
+    }
+
+    void SelectNextRock()
+    {
+        int n = Random.Range(0, availableRocks.Count);
+        selectedRockPrefab = availableRocks[n];
+        UpdatePreview();
     }
     
     private void Update()
@@ -51,17 +70,16 @@ public class RockPlacer : MonoBehaviour
             SpawnRock();
             _rockCount++;
             rockCountText.text = _rockCount.ToString();
+            SelectNextRock();
         }
 ;
         //Store a rotation and update it based on mousewheel...
 //        Debug.Log("Input.GetAxis(Mouse ScrollWheel) = " + Input.GetAxis("Mouse ScrollWheel"));
         eulerRot = eulerRot + (Input.GetAxis("Mouse ScrollWheel") + Input.GetAxis("Horizontal")) * rotSpeed * Time.deltaTime;
         previewRotation =  quaternion.Euler(0f, 0f, eulerRot);
+       
         //and show the preview.
         PreviewSelectedRock();
-        
-        //old camera system
-        //pointer.transform.position = worldPosition2D;
     }
 
     public void PreviewSelectedRock()
