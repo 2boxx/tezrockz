@@ -52,6 +52,7 @@ public class RockPlacer : MonoBehaviour
     {
         int n = Random.Range(0, availableRocks.Count);
         selectedRockPrefab = availableRocks[n];
+        eulerRot = Random.Range(-5f, 5f);
         UpdatePreview();
     }
     
