@@ -9,14 +9,20 @@ public class RocksStackHeight : MonoBehaviour
     [SerializeField] private RocksManager _rocksManager;
 
     
-    public TextMeshProUGUI heightText;
+    public TextMeshProUGUI[] heightText;
 
     public Transform startPoint;
 
 
     private void Update()
     {
-        if(_rocksManager.GetHighestRock())
-        heightText.text = Vector2.Distance(startPoint.transform.position, _rocksManager.GetHighestRock().transform.position).ToString("0")+"m";
+        if (!_rocksManager.GetHighestRock()) return;
+        
+        float distance = Vector2.Distance(startPoint.transform.position, _rocksManager.GetHighestRock().transform.position);
+
+        foreach (var text in heightText)
+        {
+            text.text = distance.ToString("0") + "m";
+        }
     }
 }
