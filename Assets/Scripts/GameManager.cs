@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
    public void RestartLevel()
    {
-      SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+      
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
    }
 }

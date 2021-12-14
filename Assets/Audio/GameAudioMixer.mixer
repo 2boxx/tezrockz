@@ -14,6 +14,38 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-8232239677943806132
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b0a9ce246c2f9844ba7caf0f56965b2b
+  m_EffectName: Highpass Simple
+  m_MixLevel: a37329e0f8d48ef40ac51e75ecc1678b
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 692d7ca9ff3ede749970e7e108f44aff
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-4154330526332488472
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c8113884f56c9174cbd1f4568ba30cae
+  m_EffectName: Lowpass Simple
+  m_MixLevel: d13e8411128ad6945b0ca1001f88c126
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 0d83208444c18da4ea9e2571813aa0ae
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-1335591686487207725
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -48,7 +80,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 5047f97c3525d32418e9b3ac6b4de8d7
+    name: FXVolume
+  - guid: d0fe92c722b13994381fe36cedbe0a78
+    name: MusicVolume
   m_AudioMixerGroupViews:
   - guids:
     - e8c3aa353e25dbc47aa30a7560f6bb52
@@ -136,3 +172,19 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &6793880341890894906
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5a605ed7792909c44acca70bf51e491b
+  m_EffectName: Highpass Simple
+  m_MixLevel: 8598797295ff6ee469f1a60ee057c2fd
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 7ab5472c4f865b845a0863b214b7ff08
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
