@@ -1935,14 +1935,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.155, g: 0.11290452, b: 0.085542455, a: 1}
+  m_Color: {r: 0.525, g: 0.525, b: 0.525, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3633887578650843593, guid: ba9761cebb18d3340a9de7f3f2921b11, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10820,10 +10820,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 491498222}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2032238991}
+        m_TargetAssemblyTypeName: ScrenshootController, Assembly-CSharp
+        m_MethodName: SetActiveUIScrenshoot
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13981,7 +13981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44fc5c922b3e204285e35097f586738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _screnshoot: {fileID: 0}
   screenshootPreview: {fileID: 1801789695}
+  UI_Screnshoot: {fileID: 491498222}
 --- !u!224 &2032238992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14206,14 +14208,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.155, g: 0.11290452, b: 0.085542455, a: 1}
+  m_Color: {r: 0.525, g: 0.525, b: 0.525, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3633887578650843593, guid: ba9761cebb18d3340a9de7f3f2921b11, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
