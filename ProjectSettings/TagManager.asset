@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zone_Game
+  - Rock
   layers:
   - Default
   - TransparentFX

@@ -1,46 +1,67 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScrenshootController : MonoBehaviour
 {
-    private bool _takeScrenshootOnNextFrame;
+    
+
+
     private Camera _cam;
     private Texture2D _screnshoot;
-    public int width;
-    public int height;
+
     public Image screenshootPreview;
     private void Awake()
     {
         _cam = FindObjectOfType<Camera>();
     }
 
-    private void OnPostRender()
-    {
-        if (_takeScrenshootOnNextFrame)
-        {
-            _takeScrenshootOnNextFrame = false;
-        
 
-            _screnshoot = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB32, false);
-            Rect rect = new Rect(0, 0, Screen.width, Screen.height);
-            _screnshoot.ReadPixels(rect,0,0);
-
-           byte[] byteArray = _screnshoot.EncodeToPNG();
-           System.IO.File.WriteAllBytes(Application.dataPath+"/CameraScrenshoot.png",byteArray);
-
-        }
-    }
 
     public void TakeScrenshoot()
     {
-        _takeScrenshootOnNextFrame = true;
+        _screnshoot = ScreenCapture.CaptureScreenshotAsTexture(1);
+        screenshootPreview.sprite = ConvertToSprite(_screnshoot);
+        screenshootPreview.preserveAspect = true;
+    }
+    
+    
+    [DllImport("__Internal")]
+    public static extern void DownloadFile(byte[] array, int byteLength, string fileName);
 
-        //_screnshoot = ScreenCapture.CaptureScreenshotAsTexture(1);
-     //screenshootPreview.sprite = ConvertToSprite(_screnshoot);
-
+    public void SaveScrenshoot()
+    {
+        //EditorUtility.SaveFilePanel
+        Debug.Log("SaveScrenshoot");
+       /*
+        Texture2D texture = _screnshoot;
+        byte[] textureBytes = texture.EncodeToJPG();
+        DownloadFile(textureBytes, textureBytes.Length, "image.jpg");
+        Destroy(texture);*/
+       StartCoroutine(RecordUpscaledFrame(1));
+    }
+    IEnumerator RecordUpscaledFrame(int screenshotUpscale)
+    {
+        yield return new WaitForEndOfFrame();
+        int resWidthN = Camera.main.pixelWidth * screenshotUpscale;
+        int resHeightN = Camera.main.pixelHeight * screenshotUpscale;
+        string dateFormat = "yyyy-MM-dd-HH-mm-ss";
+        string filename = resWidthN.ToString() + "x" + resHeightN.ToString() + "px_" + System.DateTime.Now.ToString(dateFormat);
+        Texture2D screenShot = ScreenCapture.CaptureScreenshotAsTexture(screenshotUpscale);
+        byte[] texture = screenShot.EncodeToPNG();
+        DownloadFile(texture, texture.Length, filename + ".png");
+        Destroy(screenShot);
+    }
+    
+    
+    
+    public void DiscardScrenshoot()
+    {
+        _screnshoot = null;
+        screenshootPreview.sprite = null;
     }
 
     private Sprite ConvertToSprite( Texture2D texture)
