@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 480092425406755799}
   - component: {fileID: 2925409901354509966}
   - component: {fileID: 7215622903578518205}
+  - component: {fileID: 902061498137436280}
   m_Layer: 0
   m_Name: TestRockx10_Spritesheet_1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4935412794609081950, guid: 528500d5caf5c0c4798fae054985f2c0, type: 3}
+  m_Sprite: {fileID: 5136565036704701059, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.8, y: 4.8}
+  m_Size: {x: 4.7999997, y: 4.8046875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,7 +98,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 480092425406755796}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -106,24 +107,24 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4.8, y: 4.8}
-    newSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.7999997, y: 4.8046875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.75, y: 0.52}
-      - {x: -0.049999997, y: 0.52}
-      - {x: -0.21, y: 0.44}
-      - {x: -0.71999997, y: 0.35999998}
-      - {x: -0.91999996, y: 0.16}
-      - {x: -0.91999996, y: -0.42999998}
-      - {x: -0.68, y: -0.52}
-      - {x: 0.45999998, y: -0.52}
-      - {x: 0.75, y: -0.42}
-      - {x: 0.91999996, y: -0.26}
-      - {x: 0.91999996, y: 0.35999998}
+    - - {x: -0.5831, y: -0.48510003}
+      - {x: 0.6811, y: -0.38710004}
+      - {x: 0.87710005, y: -0.1911}
+      - {x: 0.87710005, y: 0.28910002}
+      - {x: 0.6811, y: 0.48510003}
+      - {x: 0.0049000005, y: 0.48510003}
+      - {x: -0.20090002, y: 0.28910002}
+      - {x: -0.6811, y: 0.28910002}
+      - {x: -0.87710005, y: 0.093100004}
+      - {x: -0.87710005, y: -0.38710004}
+      - {x: -0.5831, y: -0.39690003}
 --- !u!50 &480092425406755793
 Rigidbody2D:
   serializedVersion: 4
@@ -280,3 +281,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &902061498137436280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480092425406755796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaTolerance: 169
+  DistanceThreshold: 8
+  Scale: 0.98
+  Decompose: 0
+  RunInPlayMode: 1
+  UseCache: 0
+  lastAlphaTolerance: 169
+  lastScale: 0.98
+  lastDistanceThreshold: 8
+  lastDecompose: 0
+  lastSprite: {fileID: 5136565036704701059, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
+  lastRect:
+    serializedVersion: 2
+    x: 480
+    y: 0
+    width: 480
+    height: 480
+  lastOffset: {x: 240, y: 240}
+  lastPixelsPerUnit: 100
+  lastFlipX: 0
+  lastFlipY: 0
+  editorCache: []

@@ -14,19 +14,24 @@ public class CheckMouseInGame : MonoBehaviour,IPointerEnterHandler,IPointerExitH
        _rockPlacer = FindObjectOfType<RockPlacer>();
    }
 
-   private void OnTriggerEnter2D(Collider2D other)
+ 
+   private void OnTriggerStay2D(Collider2D other)
    {
+
        if (other.CompareTag("Rock"))
        {
-           _rockPlacer.mouseInGame = false;
+      //     Debug.Log("Rock");
+           _rockPlacer.mouseInRock = true;
        }
-   }
-   private void OnTriggerExit2D(Collider2D other)
-   {
-       if (!other.CompareTag("Rock"))
+       else if(other.CompareTag("Zone_Game"))
        {
-           _rockPlacer.mouseInGame = true;
+//           Debug.Log("Not rock");
+
+           _rockPlacer.mouseInRock = false;
        }
+    
+     
+        
    }
 
    public void OnPointerEnter(PointerEventData eventData)

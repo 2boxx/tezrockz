@@ -8,19 +8,24 @@ using Random = UnityEngine.Random;
 
 public class RockPlacer : MonoBehaviour
 {
+    
+    [Header("Rock Preview")]
+    public GameObject rockPreview;
+    public SpriteRenderer rockPrevieSR;
+    [SerializeField] private Quaternion previewRotation;
+    public Color correctPositionColor;
+    public Color wrongPositionColor;
+    
     [SerializeField] private GameObject selectedRockPrefab;
 
     [SerializeField] private GameObject rocksParent;
 
-    public GameObject rockPreview;
     [SerializeField] private Vector2 worldPosition2D;
 
     [SerializeField]
     private float eulerRot;
-    [SerializeField] private Quaternion previewRotation;
     [SerializeField] private float rotSpeed;
 
-    public bool mouseInGame;
 
     public TextMeshProUGUI rockCountText;
     private int _rockCount;
@@ -28,24 +33,17 @@ public class RockPlacer : MonoBehaviour
 
     public List<GameObject> availableRocks;
 
+    public bool mouseInGame;
+    public bool mouseInRock;
     private void Start()
     {
-        SetupPreview();
         previewRotation = Quaternion.identity;
-        
     }
 
-    void SetupPreview()
-    {
-        rockPreview = Instantiate(selectedRockPrefab);
-        rockPreview.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0.5f);
-        rockPreview.GetComponent<Rigidbody2D>().isKinematic = true;
-        rockPreview.GetComponent<Collider2D>().enabled = false;
-    }
 
     void UpdatePreview()
     {
-        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockPrefab.GetComponent<SpriteRenderer>().sprite; //OPTIMIZE THIS!!
+        rockPrevieSR.sprite = selectedRockPrefab.GetComponent<SpriteRenderer>().sprite; //OPTIMIZE THIS!!
     }
 
     void SelectNextRock()
@@ -62,9 +60,25 @@ public class RockPlacer : MonoBehaviour
         {
             DisablePreviewRock(); return;
         }
+
+      
         
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition2D = new Vector2(worldPosition.x, worldPosition.y);
+;
+        //Store a rotation and update it based on mousewheel...
+//        Debug.Log("Input.GetAxis(Mouse ScrollWheel) = " + Input.GetAxis("Mouse ScrollWheel"));
+        eulerRot = eulerRot + (Input.GetAxis("Mouse ScrollWheel") + Input.GetAxis("Horizontal")) * rotSpeed * Time.deltaTime;
+        previewRotation =  quaternion.Euler(0f, 0f, eulerRot);
+        
+        //and show the preview.
+        PreviewSelectedRock();
+        if (mouseInRock)
+        {
+            ChanguePreviewRockColor(wrongPositionColor); return;
+        }
+        
+        ChanguePreviewRockColor(correctPositionColor);
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -73,14 +87,7 @@ public class RockPlacer : MonoBehaviour
             rockCountText.text = _rockCount.ToString();
             SelectNextRock();
         }
-;
-        //Store a rotation and update it based on mousewheel...
-//        Debug.Log("Input.GetAxis(Mouse ScrollWheel) = " + Input.GetAxis("Mouse ScrollWheel"));
-        eulerRot = eulerRot + (Input.GetAxis("Mouse ScrollWheel") + Input.GetAxis("Horizontal")) * rotSpeed * Time.deltaTime;
-        previewRotation =  quaternion.Euler(0f, 0f, eulerRot);
        
-        //and show the preview.
-        PreviewSelectedRock();
     }
 
     public void PreviewSelectedRock()
@@ -92,6 +99,11 @@ public class RockPlacer : MonoBehaviour
     public void DisablePreviewRock()
     {
         rockPreview.SetActive(false);
+    }
+    
+    public void ChanguePreviewRockColor(Color color)
+    {
+        rockPrevieSR.color = color;
     }
 
     void SpawnRock()
