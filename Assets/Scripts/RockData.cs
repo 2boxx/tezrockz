@@ -8,15 +8,18 @@ public class RockData : ScriptableObject
     public int id;
     public string name;
     public rarities rarity;
-    public float price;
-    
+    public int totalEditions;
+    //public float price;
+
+    public Sprite preview;
+    public Sprite cardSprite;
+    public List<int> samplesPerShape;
+    public List<Sprite> shapes;
 }
 
 public enum rarities
 {
-    normal,
+    common,
     epic,
-    mega,
-    legendary,
-    gamer
+    legendary
 };

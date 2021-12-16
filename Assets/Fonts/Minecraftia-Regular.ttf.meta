@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dad979bcf2f38bc429caf67fd60828cd
+guid: 562128ea9793ea64cb23cc92df1b1918
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,6 +8,7 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+  fontName: Minecraftia
   fontNames:
   - Minecraftia
   fallbackFontReferences: []
