@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,16 +12,18 @@ public class RockPlacer : MonoBehaviour
 
     [Header("Selected RockCardData")] 
     public RockCardData selectedRockCardData;
+    public RockCardMonobehaviour instanceRockCardData;
     public GameObject rockCardPrefabBase;
+
+    private RockCardSelector _rockCardSelector;
     
     [Header("Rock Preview")]
     public GameObject rockPreview;
     public SpriteRenderer rockPrevieSR;
+  
     [SerializeField] private Quaternion previewRotation;
     public Color correctPositionColor;
     public Color wrongPositionColor;
-    
-    [SerializeField] private GameObject selectedRockPrefab;
 
     [SerializeField] private GameObject rocksParent;
 
@@ -37,30 +40,27 @@ public class RockPlacer : MonoBehaviour
 
     public List<GameObject> availableRocks;
 
+    public bool outOfRocks;
     public bool mouseInGame;
     public bool mouseInRock;
     private void Start()
     {
+        _rockCardSelector = FindObjectOfType<RockCardSelector>();
         previewRotation = Quaternion.identity;
     }
 
 
-    void UpdatePreview()
-    {
-        rockPrevieSR.sprite = selectedRockPrefab.GetComponent<SpriteRenderer>().sprite; //OPTIMIZE THIS!!
-    }
-
+  
     void SelectNextRock()
     {
         int n = Random.Range(0, availableRocks.Count);
-        selectedRockPrefab = availableRocks[n];
         eulerRot = Random.Range(-5f, 5f);
-        UpdatePreview();
+       
     }
     
     private void Update()
     {
-        if (!mouseInGame)
+        if (!mouseInGame || outOfRocks)
         {
             DisablePreviewRock(); return;
         }
@@ -94,10 +94,10 @@ public class RockPlacer : MonoBehaviour
        
     }
 
-    public void PreviewSelectedRock()
+    public void PreviewSelectedRock()//OPTIMIZAR ESTO, ACTUALMENTE SE LLAMA EN UPDATE.
     {
         rockPreview.SetActive(true);
-        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape];
+        rockPreview.GetComponent<SpriteRenderer>().sprite = instanceRockCardData.shapes[instanceRockCardData.currentShape];
         rockPreview.transform.position = worldPosition2D;
         rockPreview.transform.rotation = previewRotation;
     }
@@ -115,11 +115,28 @@ public class RockPlacer : MonoBehaviour
     {
         var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
         GameObject newRockGameObject = Instantiate(rockCardPrefabBase, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
-        newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape];
-
-        
+        newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[instanceRockCardData.currentShape];
+        instanceRockCardData.SubtractSample(instanceRockCardData.currentShape);
+        _rockCardSelector.UpdateCardRockSelected();
         RocksManager.instance.AddRock(newRockGameObject);
+
+        if (CheckIfIsLastRockOfTheCard())
+        {
+            Debug.Log("Out of rocks in card: "+instanceRockCardData.name);
+            _rockCardSelector.RemoveCurrentCard();
+            _rockCardSelector.NextCard();
+
+        }
+
     }
 
+    public bool CheckIfIsLastRockOfTheCard()
+    {
+        var shapes = instanceRockCardData.unitsPerShape.Where(x => x > 0).ToList();
 
+        return (shapes.Count == 0);
+
+    }
+    
+    
 }
