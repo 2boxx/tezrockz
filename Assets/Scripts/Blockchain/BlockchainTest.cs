@@ -25,11 +25,14 @@ public class BlockchainTest : MonoBehaviour
     //public CardCollection cardCollection;
 
     private List<string> cards;
+
+    public TextMeshProUGUI textWalletAdress;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
  
     IEnumerator GetData_Coroutine()
     {
+        textWalletAdress.text = walletInputField.text;
         testOutput.text = "Loading...";
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
@@ -110,6 +113,7 @@ public class BlockchainTest : MonoBehaviour
 
     List<string> ParseCard(string input) //Recorre dentro de la carta y extrae el ID y el numero de ediciones
     {
+        Debug.Log("Parse Card input:" + input);
         List<string> parsed = new List<string>();
         parsed.Clear();
         string[] substrings = input.Split('"');
