@@ -59,7 +59,7 @@ public class RockCardSelector : MonoBehaviour
     public void NextCard()
     {
         _cardIndex++;
-        if (_cardIndex == rockCardsPlayer.Count)  _cardIndex -=1;
+        if (_cardIndex >= rockCardsPlayer.Count)  _cardIndex = 0;
 
         CheckIfIOutOfCards();
         UpdateCardRockSelected();
@@ -82,8 +82,11 @@ public class RockCardSelector : MonoBehaviour
         if (_rockPlacer.outOfRocks) return;
         
         var newCard = rockCardsPlayer[_cardIndex];
+        //Actualizamos el preview de la seleccion
         selectedRockImage.sprite = newCard.shapes[rockCardsPlayer[_cardIndex].currentShape];
         samplesPerShapeText.text = "x" + newCard.unitsPerShape[rockCardsPlayer[_cardIndex].currentShape];
+        
+        //Actualizamos la info de la roca que esta usando el jugador
         _rockPlacer.instanceRockCardData = rockCardsPlayer[_cardIndex];
         _rockPlacer.selectedRockCardData = newCard.myData;
     }

@@ -113,14 +113,15 @@ public class RockPlacer : MonoBehaviour
 
     void SpawnRock()
     {
+
         var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
         GameObject newRockGameObject = Instantiate(rockCardPrefabBase, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
         newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[instanceRockCardData.currentShape];
         instanceRockCardData.SubtractSample(instanceRockCardData.currentShape);
         _rockCardSelector.UpdateCardRockSelected();
         RocksManager.instance.AddRock(newRockGameObject);
-
-        if (CheckIfIsLastRockOfTheCard())
+        
+        if (CheckIfIsLastRockOfTheCard())//Si es la ultima
         {
             Debug.Log("Out of rocks in card: "+instanceRockCardData.name);
             _rockCardSelector.RemoveCurrentCard();
