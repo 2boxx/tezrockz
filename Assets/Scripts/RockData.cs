@@ -9,12 +9,12 @@ public class RockData : ScriptableObject
     public string name;
     public rarities rarity;
     public int totalEditions;
-    //public float price;
 
-    public Sprite preview;
+    public Sprite rockpreview;
     public Sprite cardSprite;
-    public List<int> samplesPerShape;
-    public List<Sprite> shapes;
+//    public List<int> samplesPerShape;
+  //  public List<Sprite> shapes;
+    public List<Shapes> shapes;
 }
 
 public enum rarities
@@ -23,3 +23,10 @@ public enum rarities
     epic,
     legendary
 };
+
+public struct Shapes
+{
+    public int samplesPerShape;
+    public Sprite shape;
+
+}
