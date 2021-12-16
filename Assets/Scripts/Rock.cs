@@ -11,7 +11,11 @@ public class Rock : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    public bool useJointSystem = true;
+
     public bool hasJoint;
+
+    public PhysicsMaterial2D physicsMat;
     
     void Start()
     {
@@ -20,6 +24,7 @@ public class Rock : MonoBehaviour
         
         gameObject.AddComponent<PolygonCollider2D>();
         GetComponent<ResizePolygonCollider2D>().ResizeCollider();
+        GetComponent<PolygonCollider2D>().sharedMaterial = physicsMat;
     }
 
     private void Update()
@@ -36,7 +41,8 @@ public class Rock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        if (useJointSystem == false) return;
+        
         if (other.gameObject.CompareTag("Rock"))
         { 
             if (hasJoint) return;
@@ -50,8 +56,8 @@ public class Rock : MonoBehaviour
                 joint.breakForce = 100f;
                 joint.useLimits = true;
                 JointAngleLimits2D limits = joint.limits;
-                limits.min = 0;
-                limits.max = 0;
+              //  limits.min = 0;
+               // limits.max = 0;
                 joint.limits = limits;
      
 
