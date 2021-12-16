@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 
 public class RockPlacer : MonoBehaviour
 {
+
+    [Header("Selected RockCardData")] 
+    public RockCardData selectedRockCardData;
+    public GameObject rockCardPrefabBase;
     
     [Header("Rock Preview")]
     public GameObject rockPreview;
@@ -93,6 +97,7 @@ public class RockPlacer : MonoBehaviour
     public void PreviewSelectedRock()
     {
         rockPreview.SetActive(true);
+        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape].shape;
         rockPreview.transform.position = worldPosition2D;
         rockPreview.transform.rotation = previewRotation;
     }
@@ -109,7 +114,10 @@ public class RockPlacer : MonoBehaviour
     void SpawnRock()
     {
         var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
-        GameObject newRockGameObject = Instantiate(selectedRockPrefab, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
+        GameObject newRockGameObject = Instantiate(rockCardPrefabBase, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
+        newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape].shape;
+
+        
         RocksManager.instance.AddRock(newRockGameObject);
     }
 

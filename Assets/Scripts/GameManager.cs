@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,8 +17,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     DisconnectWallet();
-     ResetCards(); 
+    //DisconnectWallet();
+    //ResetCards(); 
+     
+     Application.targetFrameRate = 60;
+
     }
     public void ResetCards(){
          for(int i = 0; i < Cards.Length; i++)
@@ -82,4 +86,10 @@ public class GameManager : MonoBehaviour
         transform.position = targetPosition;
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
+
+

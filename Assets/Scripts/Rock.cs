@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Rock : MonoBehaviour
 {
-    public RockData rockData;
+ 
     SpriteRenderer _rend;
 
     private Rigidbody2D _rb;
@@ -17,6 +17,9 @@ public class Rock : MonoBehaviour
     {
         _rend = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
+        
+        gameObject.AddComponent<PolygonCollider2D>();
+        GetComponent<ResizePolygonCollider2D>().ResizeCollider();
     }
 
     private void Update()
@@ -44,7 +47,12 @@ public class Rock : MonoBehaviour
                 HingeJoint2D  joint = gameObject.AddComponent(typeof(HingeJoint2D )) as HingeJoint2D ;
                 joint.connectedBody = other.gameObject.GetComponent<Rigidbody2D>();
                 joint.enableCollision = true;
-                joint.breakForce = 150f;
+                joint.breakForce = 100f;
+                joint.useLimits = true;
+                JointAngleLimits2D limits = joint.limits;
+                limits.min = 0;
+                limits.max = 0;
+                joint.limits = limits;
      
 
             }

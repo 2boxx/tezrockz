@@ -14,13 +14,19 @@ public class ResizePolygonCollider2D : MonoBehaviour
 
     private void Awake()
     {
-        m_polygonCollider = GetComponent<PolygonCollider2D>();
-        m_path = m_polygonCollider.GetPath(0);
- 
-        m_polygonCollider.SetPath(0, ScalePath(m_scale));
+   
+        ResizeCollider();
     }
 
+    public void ResizeCollider()
+    {
+        if (!GetComponent<PolygonCollider2D>()) return;
+        m_polygonCollider = GetComponent<PolygonCollider2D>();
+        m_path = m_polygonCollider.GetPath(0);
+        
+        m_polygonCollider.SetPath(0, ScalePath(m_scale));
 
+    }
  
     
     private Vector2[] ScalePath(float scale)
