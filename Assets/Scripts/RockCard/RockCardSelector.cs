@@ -58,30 +58,46 @@ public class RockCardSelector : MonoBehaviour
     [SerializeField] int _cardIndex=0;
     public void NextCard()
     {
-        
         _cardIndex++;
         if (_cardIndex == rockCardsPlayer.Count)  _cardIndex -=1;
-        
+
+        CheckIfIOutOfCards();
         UpdateCardRockSelected();
     }
     public void PreviousCard()
     {
-
         _cardIndex--;
         if (_cardIndex <= 0)  _cardIndex = 0;
         
+        CheckIfIOutOfCards();
         UpdateCardRockSelected();
     }
 
-
+    public void RemoveCurrentCard()
+    {
+        rockCardsPlayer.RemoveAt(_cardIndex);
+    }
     public void UpdateCardRockSelected()
     {
+        if (_rockPlacer.outOfRocks) return;
+        
         var newCard = rockCardsPlayer[_cardIndex];
         selectedRockImage.sprite = newCard.shapes[rockCardsPlayer[_cardIndex].currentShape];
         samplesPerShapeText.text = "x" + newCard.unitsPerShape[rockCardsPlayer[_cardIndex].currentShape];
-
+        _rockPlacer.instanceRockCardData = rockCardsPlayer[_cardIndex];
         _rockPlacer.selectedRockCardData = newCard.myData;
-
     }
+
+    public void CheckIfIOutOfCards()
+    {
+        if (rockCardsPlayer.Count == 0)
+        {
+            _rockPlacer.outOfRocks = true;
+            _gm.FinishedGame();
+            
+            Debug.Log("Out of cards");
+        }
+    }
+   
 }
 

@@ -31,11 +31,12 @@ public class Rock : MonoBehaviour
     {
         if (_rend.isVisible)
         {
-            _rb.isKinematic = false;
+            _rb.bodyType  = RigidbodyType2D.Dynamic;
         }
         else
         {
-            _rb.isKinematic = true;
+            _rb.bodyType  = RigidbodyType2D.Static;
+
         }
     }
 

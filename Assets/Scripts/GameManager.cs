@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI WalletText;
     public TMP_InputField SendString;
 
+
+    public UnityEvent OnFinishedGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +89,11 @@ public class GameManager : MonoBehaviour
         transform.position = targetPosition;
     }
 
+    public void FinishedGame()
+    {
+        OnFinishedGame.Invoke();
+    }
+    
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

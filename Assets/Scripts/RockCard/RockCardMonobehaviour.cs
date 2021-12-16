@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RockCardMonobehaviour : MonoBehaviour
@@ -24,8 +25,11 @@ public class RockCardMonobehaviour : MonoBehaviour
 
     public void SubtractSample(int index)
     {
-
         unitsPerShape[index] -= 1;
+        if (unitsPerShape[index] <= 0)//Si se acabaron las unidades de esa forma, cambiamos el currenShape
+        {
+            currentShape = unitsPerShape.Where(x => x > 0).ToList().Count;
+        }
     }
     
 
@@ -36,8 +40,8 @@ public class RockCardMonobehaviour : MonoBehaviour
         rarity = myData.rarity;
         totalEditions = myData.totalEditions;
         cardSprite = myData.cardSprite;
-        unitsPerShape = myData.unitsPerShape;
-        shapes = myData.shapes;
+        unitsPerShape = new List<int>(myData.unitsPerShape);
+        shapes = new List<Sprite>(myData.shapes); 
         currentShape = myData.currentShape;
     }
     
