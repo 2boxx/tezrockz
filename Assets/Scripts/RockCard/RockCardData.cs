@@ -13,9 +13,9 @@ public class RockCardData : ScriptableObject
     public int currentShape = 0;
 
     public Sprite cardSprite;
-//    public List<int> samplesPerShape;
-  //  public List<Sprite> shapes;
-    public List<Shapes> shapes;
+    public List<int> unitsPerShape;
+    public List<Sprite> shapes;
+ 
 }
 
 public enum rarities
@@ -25,11 +25,3 @@ public enum rarities
     legendary
 };
 
-
-[Serializable]
-public struct Shapes
-{
-    public int samplesPerShape;
-    public Sprite shape;
-
-}

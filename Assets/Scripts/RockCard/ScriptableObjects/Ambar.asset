@@ -16,15 +16,12 @@ MonoBehaviour:
   name: Ambar
   rarity: 1
   totalEditions: 200
+  currentShape: 0
   cardSprite: {fileID: 21300000, guid: 4558c1418b7da6142b52a62ce8a5fa16, type: 3}
+  unitsPerShape: 0100000003000000020000000100000001000000
   shapes:
-  - samplesPerShape: 1
-    shape: {fileID: 8759321554069630063, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
-  - samplesPerShape: 3
-    shape: {fileID: 7001822289993822077, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
-  - samplesPerShape: 2
-    shape: {fileID: 4049803821767701324, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
-  - samplesPerShape: 1
-    shape: {fileID: 2647506061931431548, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
-  - samplesPerShape: 1
-    shape: {fileID: 1516536156473783658, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
+  - {fileID: 8759321554069630063, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
+  - {fileID: 7001822289993822077, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
+  - {fileID: 4049803821767701324, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
+  - {fileID: 2647506061931431548, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}
+  - {fileID: 1516536156473783658, guid: 703db2767283c52479abcb7a97afb8a3, type: 3}

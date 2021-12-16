@@ -16,13 +16,11 @@ MonoBehaviour:
   name: Charoite
   rarity: 1
   totalEditions: 120
+  currentShape: 0
   cardSprite: {fileID: 21300000, guid: 9ba938ba1dc87c84eb60fc60ae2d8e5f, type: 3}
+  unitsPerShape: 02000000010000000300000002000000
   shapes:
-  - samplesPerShape: 2
-    shape: {fileID: -4332145086077032932, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
-  - samplesPerShape: 1
-    shape: {fileID: -8703489457305636993, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
-  - samplesPerShape: 2
-    shape: {fileID: 292649102501232690, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
-  - samplesPerShape: 2
-    shape: {fileID: 7871531232360029098, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
+  - {fileID: -4332145086077032932, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
+  - {fileID: -8703489457305636993, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
+  - {fileID: 292649102501232690, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}
+  - {fileID: 7871531232360029098, guid: eeaa8ba0ec5120948abaff689d6cb065, type: 3}

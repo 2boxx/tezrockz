@@ -16,11 +16,10 @@ MonoBehaviour:
   name: MoonRock
   rarity: 2
   totalEditions: 10
+  currentShape: 0
   cardSprite: {fileID: 21300000, guid: dcb325b1450828f4989b1ba589f3f7a9, type: 3}
+  unitsPerShape: 010000000100000002000000
   shapes:
-  - samplesPerShape: 1
-    shape: {fileID: -1219752287614097388, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}
-  - samplesPerShape: 1
-    shape: {fileID: -3060262717197681856, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}
-  - samplesPerShape: 2
-    shape: {fileID: -7390412724010974946, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}
+  - {fileID: -1219752287614097388, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}
+  - {fileID: -3060262717197681856, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}
+  - {fileID: -7390412724010974946, guid: 3574fd225bdc9864490e2268c1f3b2d3, type: 3}

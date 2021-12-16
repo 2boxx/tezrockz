@@ -15,13 +15,19 @@ public class RockCardMonobehaviour : MonoBehaviour
     public int currentShape = 0;
 
     public Sprite cardSprite;
-    public List<Shapes> shapes;
-
+    public List<int> unitsPerShape;
+    public List<Sprite> shapes;
     private void Start()
     {
         UpdateCardData();
     }
 
+    public void SubtractSample(int index)
+    {
+
+        unitsPerShape[index] -= 1;
+    }
+    
 
     public void UpdateCardData()
     {
@@ -30,6 +36,7 @@ public class RockCardMonobehaviour : MonoBehaviour
         rarity = myData.rarity;
         totalEditions = myData.totalEditions;
         cardSprite = myData.cardSprite;
+        unitsPerShape = myData.unitsPerShape;
         shapes = myData.shapes;
         currentShape = myData.currentShape;
     }

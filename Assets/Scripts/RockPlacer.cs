@@ -97,7 +97,7 @@ public class RockPlacer : MonoBehaviour
     public void PreviewSelectedRock()
     {
         rockPreview.SetActive(true);
-        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape].shape;
+        rockPreview.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape];
         rockPreview.transform.position = worldPosition2D;
         rockPreview.transform.rotation = previewRotation;
     }
@@ -115,7 +115,7 @@ public class RockPlacer : MonoBehaviour
     {
         var randomRotation = Quaternion.Euler( 0 , 0 , Random.Range(0, 360));
         GameObject newRockGameObject = Instantiate(rockCardPrefabBase, worldPosition2D, previewRotation, rocksParent.transform); //set as type rock?
-        newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape].shape;
+        newRockGameObject.GetComponent<SpriteRenderer>().sprite = selectedRockCardData.shapes[selectedRockCardData.currentShape];
 
         
         RocksManager.instance.AddRock(newRockGameObject);

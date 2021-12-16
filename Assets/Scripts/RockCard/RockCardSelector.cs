@@ -76,9 +76,11 @@ public class RockCardSelector : MonoBehaviour
 
     public void UpdateCardRockSelected()
     {
-        selectedRockImage.sprite =   rockCardsPlayer[_cardIndex].shapes[0].shape;
-        samplesPerShapeText.text = "x"+rockCardsPlayer[_cardIndex].shapes[0].samplesPerShape.ToString();
-        _rockPlacer.selectedRockCardData = rockCardsPlayer[_cardIndex].myData;
+        var newCard = rockCardsPlayer[_cardIndex];
+        selectedRockImage.sprite = newCard.shapes[rockCardsPlayer[_cardIndex].currentShape];
+        samplesPerShapeText.text = "x" + newCard.unitsPerShape[rockCardsPlayer[_cardIndex].currentShape];
+
+        _rockPlacer.selectedRockCardData = newCard.myData;
 
     }
 }
