@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 6446325426340115276}
   - component: {fileID: 6446325426340115277}
   - component: {fileID: 6446325426340115275}
-  - component: {fileID: 7119702865002380252}
   - component: {fileID: 6446325426340115272}
   - component: {fileID: 6446325426340115273}
   - component: {fileID: 3216963250695176338}
   - component: {fileID: 4273656919176298437}
-  - component: {fileID: 9112255136752709739}
+  - component: {fileID: 2642078597276083180}
+  - component: {fileID: -361421067695063112}
   m_Layer: 0
   m_Name: TestRockx10_Spritesheet_0
   m_TagString: Rock
@@ -110,41 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &7119702865002380252
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6446325426340115270}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.8, y: 4.8}
-    newSize: {x: 4.7999997, y: 4.8046875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.0049000005, y: -0.6811}
-      - {x: 0.77910006, y: -0.6811}
-      - {x: 1.0731001, y: -0.38710004}
-      - {x: 1.0731001, y: 0.1911}
-      - {x: 0.5831, y: 0.5831}
-      - {x: -0.87710005, y: 0.48510003}
-      - {x: -1.0731001, y: 0.1911}
-      - {x: -1.0731001, y: -0.28910002}
-      - {x: -0.5831, y: -0.5831}
-      - {x: 0.0049000005, y: -0.59290004}
 --- !u!114 &6446325426340115272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +245,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9112255136752709739
+--- !u!60 &2642078597276083180
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446325426340115270}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.7999997, y: 4.8046875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.04, y: 0.31}
+      - {x: 0.81, y: 0.52}
+      - {x: 0.59999996, y: 0.62}
+      - {x: -0.62, y: 0.62}
+      - {x: -0.64, y: 0.53}
+      - {x: -0.90999997, y: 0.53999996}
+      - {x: -1.02, y: 0.42999998}
+      - {x: -1.12, y: 0.19999999}
+      - {x: -1.12, y: -0.34}
+      - {x: -0.93, y: -0.57}
+      - {x: -0.17, y: -0.71999997}
+      - {x: 0.79999995, y: -0.71999997}
+      - {x: 0.90999997, y: -0.64}
+      - {x: 1.12, y: -0.41}
+      - {x: 1.12, y: 0.19999999}
+--- !u!114 &-361421067695063112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,28 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6446325426340115270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Script: {fileID: 11500000, guid: c443627b5c2143e4aaa423c92cbe7f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AlphaTolerance: 169
-  DistanceThreshold: 8
-  Scale: 0.98
-  Decompose: 0
-  RunInPlayMode: 1
-  UseCache: 0
-  lastAlphaTolerance: 169
-  lastScale: 0.98
-  lastDistanceThreshold: 1
-  lastDecompose: 0
-  lastSprite: {fileID: 5136565036704701059, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
-  lastRect:
-    serializedVersion: 2
-    x: 480
-    y: 0
-    width: 480
-    height: 480
-  lastOffset: {x: 240, y: 240}
-  lastPixelsPerUnit: 100
-  lastFlipX: 0
-  lastFlipY: 0
-  editorCache: []
+  m_scale: -0.05

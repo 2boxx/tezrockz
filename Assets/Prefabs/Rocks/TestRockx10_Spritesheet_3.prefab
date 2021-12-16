@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7753031487022172466}
   - component: {fileID: 7753031487022172467}
-  - component: {fileID: 7753031487022172464}
   - component: {fileID: 7753031487022172465}
   - component: {fileID: 7753031487022172470}
   - component: {fileID: 7753031487022172471}
   - component: {fileID: 1405815667705592488}
   - component: {fileID: 7262412797890651357}
-  - component: {fileID: -6366128227693019095}
+  - component: {fileID: 599807818570798919}
+  - component: {fileID: -1010934910156815949}
   m_Layer: 0
   m_Name: TestRockx10_Spritesheet_3
   m_TagString: Rock
@@ -89,41 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7753031487022172464
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753031487022172468}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.8, y: 4.8}
-    newSize: {x: 4.7999997, y: 4.8046875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.5, y: 0.62}
-      - {x: -0.26, y: 0.62}
-      - {x: -0.72999996, y: 0.45999998}
-      - {x: -0.82, y: 0.32999998}
-      - {x: -0.82, y: -0.44}
-      - {x: -0.38, y: -0.62}
-      - {x: 0.56, y: -0.62}
-      - {x: 0.82, y: -0.52}
-      - {x: 0.82, y: 0.32999998}
-      - {x: 0.75, y: 0.42999998}
 --- !u!50 &7753031487022172465
 Rigidbody2D:
   serializedVersion: 4
@@ -280,7 +245,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-6366128227693019095
+--- !u!60 &599807818570798919
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753031487022172468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.7999997, y: 4.8046875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: 0.62}
+      - {x: -0.26, y: 0.62}
+      - {x: -0.72999996, y: 0.45999998}
+      - {x: -0.82, y: 0.32999998}
+      - {x: -0.82, y: -0.44}
+      - {x: -0.38, y: -0.62}
+      - {x: 0.56, y: -0.62}
+      - {x: 0.82, y: -0.52}
+      - {x: 0.82, y: 0.32999998}
+      - {x: 0.75, y: 0.42999998}
+--- !u!114 &-1010934910156815949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,28 +289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7753031487022172468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c55c83d4c4dd1145ad5fbbab3c3df36, type: 3}
+  m_Script: {fileID: 11500000, guid: c443627b5c2143e4aaa423c92cbe7f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AlphaTolerance: 169
-  DistanceThreshold: 8
-  Scale: 0.98
-  Decompose: 0
-  RunInPlayMode: 1
-  UseCache: 0
-  lastAlphaTolerance: 169
-  lastScale: 0.98
-  lastDistanceThreshold: 1
-  lastDecompose: 0
-  lastSprite: {fileID: 2722435659419239599, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
-  lastRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 480
-    height: 480
-  lastOffset: {x: 240, y: 240}
-  lastPixelsPerUnit: 100
-  lastFlipX: 0
-  lastFlipY: 0
-  editorCache: []
+  m_scale: -0.05
