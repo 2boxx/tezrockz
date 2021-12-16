@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: URockStacker
   defaultCursor: {fileID: 2800000, guid: f52bf07700dbde44aa7c5a1e61380e25, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 32, y: 32}
   m_SplashScreenBackgroundColor: {r: 0.11687498, g: 0.24225003, b: 0.34, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
@@ -46,8 +46,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 480
-  defaultScreenHeightWeb: 320
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 640
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1

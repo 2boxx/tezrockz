@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480092425406755796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.092935, y: 1.6162739, z: 0}
+  m_LocalPosition: {x: 14.092935, y: 1.6162739, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockData: {fileID: 11400000, guid: 528d72a650373954fbee491d71bda5b0, type: 2}
+  hasJoint: 0
 --- !u!82 &7215622903578518205
 AudioSource:
   m_ObjectHideFlags: 0
@@ -293,4 +294,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c443627b5c2143e4aaa423c92cbe7f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scale: -0.05
+  m_scale: -0.1
