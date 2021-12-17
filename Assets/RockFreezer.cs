@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Mathematics;
 
 public class RockFreezer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RockFreezer : MonoBehaviour
 
     public TextMeshProUGUI UI_powerCounter;
 
+    public GameObject frozenParticles;
     private void Start()
     {
         powers = initialPowers;
@@ -30,6 +32,7 @@ public class RockFreezer : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
                 Rock selectedRock = hit.collider.gameObject.GetComponent<Rock>();
                 Freeze(selectedRock);
+                Instantiate(frozenParticles, selectedRock.transform.position, quaternion.identity);
             }
         }
     }
