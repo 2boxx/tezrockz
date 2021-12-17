@@ -26611,7 +26611,7 @@ GameObject:
   - component: {fileID: 2020961443}
   - component: {fileID: 2020961442}
   m_Layer: 0
-  m_Name: NFTInventoryManager
+  m_Name: TestInventoryManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26629,7 +26629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271b0c38af620c7479de432585ce2ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedCards: 
+  ownedCards: 020000000200000002000000
 --- !u!4 &2020961443
 Transform:
   m_ObjectHideFlags: 0
