@@ -11,27 +11,22 @@ using Newtonsoft.Json;
 
 public class BlockchainManager : MonoBehaviour
 {
-    // public string currentWallet = "tz1brgKFnJLYa5xNw96sYo4Bt9oeDcwHU62R";
     public TMP_InputField walletInputField;
 
-    public int contractID = 56434; // 56434 = tezrocks
-    
+    public const int contractID = 56434;
+
+    private const string devWalletAdress= "tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG";
+
+    private const string burnWalletAdress = "tz1burnburnburnburnburnburnburjAYjjX";
+
     public List<String> parsedStringTest;
 
-    public TextMeshProUGUI testOutput;
-
-    public TextMeshProUGUI testParsedCards;
-
-    //public CardCollection cardCollection;
+    public TextMeshProUGUI textFeedback;
 
     private List<string> cards;
 
     public TextMeshProUGUI textWalletAdress;
-
-    private bool isValidWallet = true;
     
-    const char charCardDelimiters = '{';
-
     public List<Root> data;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
@@ -39,7 +34,7 @@ public class BlockchainManager : MonoBehaviour
     IEnumerator GetData_Coroutine()
     {
         textWalletAdress.text = walletInputField.text;
-        testOutput.text = "Loading...";
+        textFeedback.text = "Loading...";
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
         //https://api.tzkt.io/v1/bigmaps/56434/keys?key.address=tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG&select=key,value
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
@@ -47,34 +42,28 @@ public class BlockchainManager : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError || request.downloadHandler.text == "[]")
             {
-                testOutput.text = request.error;
-                isValidWallet = false;
+                textFeedback.text = request.error;
             }
             else
             {
-                isValidWallet = true;
-                //SUCCESS
-                
-                //JSON Test
+                //Get the user input
                 string s = request.downloadHandler.text;
-                Debug.Log("Json Input String: " + s);
+
+                //Check the user isn't cheating ;)
+                s = Validate(s);
+
+                //Deserialize the data from the JSON
                 data = JsonConvert.DeserializeObject<List<Root>>(s);
                 for (int i = 0; i < data.Count; i++)
                 {
-                    Debug.Log("Card #" + i);
-                    Debug.Log("Key:");
-                    Debug.Log("address: " + data[i].key.address);
-                    Debug.Log("nat: " + data[i].key.nat); //Id of this card
-                    Debug.Log("Value:"); //Amount of this card
-                    Debug.Log(data[i].value);
-
+                    //Extract the user's collection data we want from the deserialized object
                     int id = data[i].key.nat;
                     int amount = data[i].value;
                     
-                    //Store address
+                    //Store the user address
                     Inventory.instance.currentWalletAddress = data[i].key.address;
                     
-                    //Store inventory
+                    //Add the card data to the player inventory singleton
                     Inventory.instance.ownedCards.Clear();
                     for (int j = 0; j < amount; j++)
                     {
@@ -83,6 +72,13 @@ public class BlockchainManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private string Validate(string s)
+    {
+        if (s == devWalletAdress || s == burnWalletAdress) return "nice try! :)";
+        if (s == "moldavita") return devWalletAdress;
+        return s;
     }
 }
 
