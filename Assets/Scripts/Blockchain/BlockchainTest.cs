@@ -27,6 +27,8 @@ public class BlockchainTest : MonoBehaviour
     private List<string> cards;
 
     public TextMeshProUGUI textWalletAdress;
+
+    private bool isValidWallet = true;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
  
@@ -35,13 +37,18 @@ public class BlockchainTest : MonoBehaviour
         textWalletAdress.text = walletInputField.text;
         testOutput.text = "Loading...";
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
+        //https://api.tzkt.io/v1/bigmaps/56434/keys?key.address=tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG&select=key,value
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
-            if (request.isNetworkError || request.isHttpError)
+            if (request.isNetworkError || request.isHttpError || request.downloadHandler.text == "[]")
+            {
                 testOutput.text = request.error;
+                isValidWallet = false;
+            }
             else
             {
+                isValidWallet = true;
                 //SUCCESS
                 
                 //TEST ONE
