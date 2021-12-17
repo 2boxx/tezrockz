@@ -19653,7 +19653,7 @@ RectTransform:
   - {fileID: 1073486347}
   - {fileID: 461743130}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20509,7 +20509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5587051631996400860, guid: 7a4e1732bb9821b49b153e1a28602c8c, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5587051631996400860, guid: 7a4e1732bb9821b49b153e1a28602c8c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20756,7 +20756,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &877971793
@@ -21528,7 +21528,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137171447
 GameObject:
@@ -22781,7 +22781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391993621
 GameObject:
@@ -22929,7 +22929,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1412023726
 GameObject:
@@ -23284,7 +23284,7 @@ Transform:
   - {fileID: 21129623}
   - {fileID: 1491278031}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478802504
 GameObject:
@@ -23409,7 +23409,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1478802507
@@ -23451,7 +23451,7 @@ Transform:
   - {fileID: 1957332138}
   - {fileID: 567164239}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490017924
 GameObject:
@@ -23858,7 +23858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534792221 stripped
 GameObject:
@@ -26611,7 +26611,7 @@ GameObject:
   - component: {fileID: 2020961443}
   - component: {fileID: 2020961442}
   m_Layer: 0
-  m_Name: InventoryManager
+  m_Name: NFTInventoryManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26630,7 +26630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownedCards: 
-  activeCards: 
 --- !u!4 &2020961443
 Transform:
   m_ObjectHideFlags: 0
@@ -26643,7 +26642,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032238990
 GameObject:
@@ -27352,9 +27351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005798a4dca5824eae7e995b95b0524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadNFTInventory: 1
   selectedRockImage: {fileID: 290526371}
   samplesPerShapeText: {fileID: 1597483182}
-  rockCardsTokensPlayer: 02000000030000000400000005000000070000000800000009000000
+  rockCardsTokensPlayer: 
   rockCardsPlayer: []
   rockCardsGlossary:
   - {fileID: 11400000, guid: a0ed2e35bccdef24d87fa1dcd6a0a088, type: 2}
@@ -27559,5 +27559,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

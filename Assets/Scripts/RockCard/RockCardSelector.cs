@@ -13,8 +13,8 @@ public class RockCardSelector : MonoBehaviour
 {
     private GameManager _gm;
     private RockPlacer _rockPlacer;
-    private Inventory _nftInventory;
-    
+
+    public bool loadNFTInventory;
     
     [Header("Select Preview")]
     public Image selectedRockImage;
@@ -31,9 +31,10 @@ public class RockCardSelector : MonoBehaviour
 
     private void Start()
     {
-        
-        
-        
+        if (loadNFTInventory) //cargamos los nft de la wallet
+            rockCardsTokensPlayer = Inventory.instance.ownedCards;
+            
+            
         _gm = FindObjectOfType<GameManager>();
         _rockPlacer = FindObjectOfType<RockPlacer>();
         CheckPlayerTokens();
