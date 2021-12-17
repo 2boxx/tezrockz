@@ -71,6 +71,7 @@ public class BlockchainTest : MonoBehaviour
                     int id = data[i].key.nat;
                     int amount = data[i].value;
                     
+                    Inventory.instance.ownedCards.Clear();
                     for (int j = 0; j < amount; j++)
                     {
                         Inventory.instance.ownedCards.Add(id);
