@@ -13,6 +13,8 @@ public class RockCardSelector : MonoBehaviour
 {
     private GameManager _gm;
     private RockPlacer _rockPlacer;
+    private Inventory _nftInventory;
+    
     
     [Header("Select Preview")]
     public Image selectedRockImage;
@@ -29,6 +31,9 @@ public class RockCardSelector : MonoBehaviour
 
     private void Start()
     {
+        
+        
+        
         _gm = FindObjectOfType<GameManager>();
         _rockPlacer = FindObjectOfType<RockPlacer>();
         CheckPlayerTokens();
