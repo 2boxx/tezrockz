@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RockFreezer : MonoBehaviour
 {
     public int powers;
     public int initialPowers;
     public LayerMask rocksLayer;
+    public Color frozenColor;
+
+    public TextMeshProUGUI UI_powerCounter;
 
     private void Start()
     {
@@ -31,7 +35,14 @@ public class RockFreezer : MonoBehaviour
 
     private void Freeze(Rock rock)
     {
-        rock.rb.constraints = (RigidbodyConstraints2D.FreezeAll);
         powers--;
+        rock.rb.constraints = (RigidbodyConstraints2D.FreezeAll);
+        rock.sprite.color = frozenColor;
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        UI_powerCounter.text = powers.ToString();
     }
 }
