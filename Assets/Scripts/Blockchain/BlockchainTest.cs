@@ -59,112 +59,24 @@ public class BlockchainTest : MonoBehaviour
                 string s = request.downloadHandler.text;
                 Debug.Log("Json Input String: " + s);
                 data = JsonConvert.DeserializeObject<List<Root>>(s);
-                foreach (var VARIABLE in data)
+                for (int i = 0; i < data.Count; i++)
                 {
-                    data.key
+                    Debug.Log("Card #" + i);
+                    Debug.Log("Key:");
+                    Debug.Log("address: " + data[i].key.address);
+                    Debug.Log("nat: " + data[i].key.nat); //Id of this card
+                    Debug.Log("Value:"); //Amount of this card
+                    Debug.Log(data[i].value);
+                    //
+                    // int amount = data[i].value;
+                    //
+                    // for (int j = 0; j < UPPER; j++)
+                    // {
+                    //     
+                    // }
                 }
-
-
-
-
-                //TEST ONE
-                // testOutput.text = "";
-                // List<string> objktIDs = ParseObjktIDs(request.downloadHandler.text);
-                // foreach (var s in objktIDs)
-                // {
-                //     testOutput.text += s;
-                //     testOutput.text += "\n";
-                // }
-                //
-
-                //TEST TWO
-                // testParsedCards.text = "";
-                // cards = ParseCollection(request.downloadHandler.text);
-                // foreach (var c in cards)
-                // {
-                //     testParsedCards.text += c;
-                //     testParsedCards.text += "\n";
-                // }
-                //
-                // testOutput.text = "";
-                //
-                // for (int i = 0; i < cards.Count; i++)
-                // {
-                //     testOutput.text += "Card " + i;
-                //     testOutput.text += "\n";
-                //     // testOutput.text += cards[i].ToString();
-                //
-                //     List<string> parsedCard = ParseCard(cards[i]);
-                //     foreach (var s in parsedCard)
-                //     {
-                //         testOutput.text += "\n";
-                //         testOutput.text += s;
-                //         testOutput.text += "\n";
-                //     }
-                //     testOutput.text += "\n";
-                //     testOutput.text += "\n";
-                // }
             }
         }
     }
-
-    List<string> ParseObjktIDs(string input)
-    {
-        List<string> parsed = new List<string>();
-        parsed.Clear();
-        string[] substrings = input.Split('"');
-        for (int i = 3; i < substrings.Length-1; i+=8) //i+=8)
-        {
-            parsed.Add(substrings[i]);
-        }
-
-        return parsed;
-    }
-
-    List<string> ParseCollection(string input) // Recorre cada carta (sin importar si tenes muchas ediciones de una)
-    {
-        List<string> cards = new List<string>();
-        string[] substrings = input.Split('{');
-        for (int i = 0; i < substrings.Length-1; i++)
-        {
-            cards.Add(substrings[i]);
-        }
-
-        Inventory.instance.Clear();
-        return cards;
-    }
-
-    List<string> ParseCard(string input) //Recorre dentro de la carta y extrae el ID y el numero de ediciones
-    {
-        Debug.Log("Parsing Card input:" + input);
-        List<string> parsed = new List<string>();
-        parsed.Clear();
-        string[] substrings = input.Split('"');
-        parsed.Add("ID: " + substrings[5]);
-        parsed.Add("Quantity: " + substrings[13]);
-
-        //Inventory.instance.ownedCards[int.Parse(substrings[5])] = int.Parse(substrings[13]);
-        int cardID = int.Parse(substrings[5]);
-        int quantity = int.Parse(substrings[13]);
-
-        for (int i = 0; i < quantity; i++)
-        {
-            Inventory.instance.ownedCards.Add(cardID);
-        }
-        
-        return parsed;
-    }
-    
-    
 }
 
-// line 5 = id #1
-// line 13 = quantity #1
-// 14 empty
-// 15 start over (add 16
-//
-//
-//
-// 5, 13
-// 21, 29
-// 37, 45

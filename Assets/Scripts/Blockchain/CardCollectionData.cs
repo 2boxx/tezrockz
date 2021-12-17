@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[System.Serializable]
-public class CardCollectionData
-{
-   public List<Root> data;
-}
+//
+// [System.Serializable]
+// public class CardCollectionData
+// {
+//    public List<Root> data;
+// }
 
 [System.Serializable]
 public class Key
