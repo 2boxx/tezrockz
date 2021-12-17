@@ -19,6 +19,7 @@ public class RockPlacer : MonoBehaviour
 
     public RarityMeter rarityMeter;
     
+    
     [Header("Rock Preview")]
     public GameObject rockPreview;
     public SpriteRenderer rockPrevieSR;

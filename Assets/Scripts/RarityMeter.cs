@@ -10,18 +10,18 @@ public class RarityMeter : MonoBehaviour
     public TextMeshProUGUI epicText;
     public TextMeshProUGUI legendaryText;
     
-    public int commonPercentage = 1;
-    public int epicPercentage = 1;
-    public int legendaryPercentage = 1;
+    public int commonPercentage;
+    public int epicPercentage;
+    public int legendaryPercentage;
 
-    public int totalRocks=1;
+    public int totalRocks;
 
     public void UpdatePercentageTexts()
     {
         if (totalRocks == 0 ) return;
-        if (commonPercentage =>0) commonText.text = commonPercentage/totalRocks*100+"%";
-        epicText.text = epicPercentage/totalRocks*100+"%";
-        legendaryText.text = legendaryPercentage/totalRocks*100+"%";
+        if (commonPercentage > 0) commonText.text = commonPercentage/totalRocks*100+"%";
+        if (epicPercentage > 0) epicText.text = epicPercentage/totalRocks*100+"%";
+        if (legendaryPercentage > 0) legendaryText.text = (legendaryPercentage/totalRocks)*100+"%";
     }
 
 
