@@ -67,13 +67,14 @@ public class BlockchainTest : MonoBehaviour
                     Debug.Log("nat: " + data[i].key.nat); //Id of this card
                     Debug.Log("Value:"); //Amount of this card
                     Debug.Log(data[i].value);
-                    //
-                    // int amount = data[i].value;
-                    //
-                    // for (int j = 0; j < UPPER; j++)
-                    // {
-                    //     
-                    // }
+
+                    int id = data[i].key.nat;
+                    int amount = data[i].value;
+                    
+                    for (int j = 0; j < amount; j++)
+                    {
+                        Inventory.instance.ownedCards.Add(id);
+                    }
                 }
             }
         }

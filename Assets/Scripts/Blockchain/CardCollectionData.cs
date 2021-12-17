@@ -12,7 +12,7 @@ using UnityEngine;
 [System.Serializable]
 public class Key
 {
-   public string nat { get; set; }
+   public int nat { get; set; }
    public string address { get; set; }
 }
 
@@ -20,7 +20,7 @@ public class Key
 public class Root
 {
    public Key key { get; set; }
-   public string value { get; set; }
+   public int value { get; set; }
 }
 
 
