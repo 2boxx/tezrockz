@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class RocksStackHeight : MonoBehaviour
@@ -14,7 +15,10 @@ public class RocksStackHeight : MonoBehaviour
 
     public Transform startPoint;
 
+    
+    [Header("Height Reward")]
     public float nextReward = 20;
+    public Image rewardIndicator;
     private float rewardInterval = 20;
 
     public UnityEvent onReward;
@@ -26,7 +30,8 @@ public class RocksStackHeight : MonoBehaviour
         float distance = Vector2.Distance(startPoint.transform.position, _rocksManager.GetHighestRock().transform.position);
 
         heightText.text = distance.ToString("0") + "m";
-        
+
+        rewardIndicator.fillAmount = nextReward / 1;
         if (distance>= nextReward)
         {
             nextReward += rewardInterval;
