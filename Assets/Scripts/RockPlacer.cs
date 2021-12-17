@@ -133,7 +133,7 @@ public class RockPlacer : MonoBehaviour
 
         }
         
-        
+        instanceRockCardData.RandomizeCurrenShape();
         rarityMeter.AddPercentage(instanceRockCardData);
 
     }

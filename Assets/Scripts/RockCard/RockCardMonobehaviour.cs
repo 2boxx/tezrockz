@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RockCardMonobehaviour : MonoBehaviour
 {
@@ -28,10 +29,35 @@ public class RockCardMonobehaviour : MonoBehaviour
         unitsPerShape[index] -= 1;
         if (unitsPerShape[index] <= 0)//Si se acabaron las unidades de esa forma, cambiamos el currenShape
         {
-            currentShape = unitsPerShape.Where(x => x > 0).ToList().Count;
+            //curentShape = unitsPerShape.Where(x => x > 0).ToList();
+            ChangeCurrentShape();
         }
     }
-    
+
+    public void RandomizeCurrenShape()
+    {
+        int currentShapeOLD = currentShape;
+        ChangeCurrentShape();
+       // if(currentShape == currentShapeOLD) ChangeCurrentShape();
+    }
+
+    private void ChangeCurrentShape()
+    {
+        var availableIndexes = new List<int>();
+        
+        for (int i = 0; i < unitsPerShape.Count; i++)
+        {
+            if (unitsPerShape[i] > 0)
+            {
+                availableIndexes.Add(i);
+            }
+        }
+
+        if (availableIndexes.Count == 0) return;
+        currentShape = availableIndexes[Random.Range(0, availableIndexes.Count)];
+
+
+    }
 
     public void UpdateCardData()
     {

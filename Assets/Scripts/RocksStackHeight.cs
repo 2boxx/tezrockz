@@ -17,9 +17,9 @@ public class RocksStackHeight : MonoBehaviour
 
     
     [Header("Height Reward")]
-    public float nextReward = 20;
+    public float nextReward = 10;
     public Image rewardIndicator;
-    private float rewardInterval = 20;
+    private float rewardInterval = 10;
 
     public UnityEvent onReward;
 
@@ -27,15 +27,24 @@ public class RocksStackHeight : MonoBehaviour
     {
         if (!_rocksManager.GetHighestRock()) return;
         
-        float distance = Vector2.Distance(startPoint.transform.position, _rocksManager.GetHighestRock().transform.position);
+        float distance = Mathf.Round(Vector2.Distance(startPoint.transform.position, _rocksManager.GetHighestRock().transform.position));
 
-        heightText.text = distance.ToString("0") + "m";
+        heightText.text = distance + "m";
 
-        rewardIndicator.fillAmount = nextReward / 1;
+
+       // float awayOfReward = nextReward - distance;
+
+       // var scaledValue = 0;
+
+       // Debug.Log(awayOfReward +": "+scaledValue.ToString("F1")); 
+        
+       // rewardIndicator.fillAmount = scaledValue;
         if (distance>= nextReward)
         {
             nextReward += rewardInterval;
             onReward.Invoke();
         }
     }
+
+ 
 }
