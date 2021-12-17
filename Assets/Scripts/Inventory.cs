@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         if (instance == null) instance = this;
         else Destroy(this);
     }
