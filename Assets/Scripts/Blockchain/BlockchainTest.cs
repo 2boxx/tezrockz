@@ -16,7 +16,7 @@ public class BlockchainTest : MonoBehaviour
 
     public int contractID = 56434; // 56434 = tezrocks
     
-    // public List<String> parsed;
+    public List<String> parsedStringTest;
 
     public TextMeshProUGUI testOutput;
 
@@ -29,6 +29,10 @@ public class BlockchainTest : MonoBehaviour
     public TextMeshProUGUI textWalletAdress;
 
     private bool isValidWallet = true;
+    
+    const char charCardDelimiters = '{';
+
+    public List<Root> data;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
  
@@ -51,43 +55,55 @@ public class BlockchainTest : MonoBehaviour
                 isValidWallet = true;
                 //SUCCESS
                 
+                //JSON Test
+                string s = request.downloadHandler.text;
+                Debug.Log("Json Input String: " + s);
+                data = JsonConvert.DeserializeObject<List<Root>>(s);
+                foreach (var VARIABLE in data)
+                {
+                    data.key
+                }
+
+
+
+
                 //TEST ONE
-                 // testOutput.text = "";
-                 // List<string> objktIDs = ParseObjktIDs(request.downloadHandler.text);
-                 // foreach (var s in objktIDs)
-                 // {
-                 //     testOutput.text += s;
-                 //     testOutput.text += "\n";
-                 // }
-                 //
-                
+                // testOutput.text = "";
+                // List<string> objktIDs = ParseObjktIDs(request.downloadHandler.text);
+                // foreach (var s in objktIDs)
+                // {
+                //     testOutput.text += s;
+                //     testOutput.text += "\n";
+                // }
+                //
+
                 //TEST TWO
-                testParsedCards.text = "";
-                cards = ParseCollection(request.downloadHandler.text);
-                foreach (var c in cards)
-                {
-                    testParsedCards.text += c;
-                    testParsedCards.text += "\n";
-                }
-
-                testOutput.text = "";
-
-                for (int i = 0; i < cards.Count; i++)
-                {
-                    testOutput.text += "Card " + i;
-                    testOutput.text += "\n";
-                    // testOutput.text += cards[i].ToString();
-
-                    List<string> parsedCard = ParseCard(cards[i]);
-                    foreach (var s in parsedCard)
-                    {
-                        testOutput.text += "\n";
-                        testOutput.text += s;
-                        testOutput.text += "\n";
-                    }
-                    testOutput.text += "\n";
-                    testOutput.text += "\n";
-                }
+                // testParsedCards.text = "";
+                // cards = ParseCollection(request.downloadHandler.text);
+                // foreach (var c in cards)
+                // {
+                //     testParsedCards.text += c;
+                //     testParsedCards.text += "\n";
+                // }
+                //
+                // testOutput.text = "";
+                //
+                // for (int i = 0; i < cards.Count; i++)
+                // {
+                //     testOutput.text += "Card " + i;
+                //     testOutput.text += "\n";
+                //     // testOutput.text += cards[i].ToString();
+                //
+                //     List<string> parsedCard = ParseCard(cards[i]);
+                //     foreach (var s in parsedCard)
+                //     {
+                //         testOutput.text += "\n";
+                //         testOutput.text += s;
+                //         testOutput.text += "\n";
+                //     }
+                //     testOutput.text += "\n";
+                //     testOutput.text += "\n";
+                // }
             }
         }
     }
@@ -108,7 +124,7 @@ public class BlockchainTest : MonoBehaviour
     List<string> ParseCollection(string input) // Recorre cada carta (sin importar si tenes muchas ediciones de una)
     {
         List<string> cards = new List<string>();
-        string[] substrings = input.Split(']');
+        string[] substrings = input.Split('{');
         for (int i = 0; i < substrings.Length-1; i++)
         {
             cards.Add(substrings[i]);
@@ -120,17 +136,26 @@ public class BlockchainTest : MonoBehaviour
 
     List<string> ParseCard(string input) //Recorre dentro de la carta y extrae el ID y el numero de ediciones
     {
-        Debug.Log("Parse Card input:" + input);
+        Debug.Log("Parsing Card input:" + input);
         List<string> parsed = new List<string>();
         parsed.Clear();
         string[] substrings = input.Split('"');
         parsed.Add("ID: " + substrings[5]);
         parsed.Add("Quantity: " + substrings[13]);
 
-        Inventory.instance.ownedCards[int.Parse(substrings[5])] = int.Parse(substrings[13]);
+        //Inventory.instance.ownedCards[int.Parse(substrings[5])] = int.Parse(substrings[13]);
+        int cardID = int.Parse(substrings[5]);
+        int quantity = int.Parse(substrings[13]);
+
+        for (int i = 0; i < quantity; i++)
+        {
+            Inventory.instance.ownedCards.Add(cardID);
+        }
         
         return parsed;
     }
+    
+    
 }
 
 // line 5 = id #1

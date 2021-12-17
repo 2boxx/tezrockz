@@ -449,9 +449,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walletInputField: {fileID: 1718768671}
   contractID: 56434
+  parsedStringTest: []
   testOutput: {fileID: 1655987119}
   testParsedCards: {fileID: 419062398}
   textWalletAdress: {fileID: 1043486029}
+  data:
+    value: 0
 --- !u!4 &50575581
 Transform:
   m_ObjectHideFlags: 0
