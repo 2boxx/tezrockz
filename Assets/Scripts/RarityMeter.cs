@@ -10,18 +10,18 @@ public class RarityMeter : MonoBehaviour
     public TextMeshProUGUI epicText;
     public TextMeshProUGUI legendaryText;
     
-    public int commonPercentage;
-    public int epicPercentage;
-    public int legendaryPercentage;
+    public int commonRocks;
+    public int epicRocks;
+    public int legendaryRocks;
 
     public int totalRocks;
 
     public void UpdatePercentageTexts()
     {
         if (totalRocks == 0 ) return;
-        if (commonPercentage > 0) commonText.text = commonPercentage/totalRocks*100+"%";
-        if (epicPercentage > 0) epicText.text = epicPercentage/totalRocks*100+"%";
-        if (legendaryPercentage > 0) legendaryText.text = (legendaryPercentage/totalRocks)*100+"%";
+        commonText.text = (commonRocks/totalRocks)*100+"%";
+        epicText.text = (epicRocks/totalRocks)*100+"%";
+        legendaryText.text = (legendaryRocks/totalRocks)*100+"%";
     }
 
 
@@ -30,15 +30,16 @@ public class RarityMeter : MonoBehaviour
         switch (rock.rarity)
         {
             case rarities.common:
-                commonPercentage++;
+                commonRocks++;
                 break;
             case rarities.epic:
-                epicPercentage++;
+                epicRocks++;
                 break;
             case rarities.legendary:
-                legendaryPercentage++;
+                legendaryRocks++;
                 break;
         }
+        totalRocks++;
         UpdatePercentageTexts();
     }
 }

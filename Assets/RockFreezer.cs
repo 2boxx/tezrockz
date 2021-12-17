@@ -43,6 +43,6 @@ public class RockFreezer : MonoBehaviour
 
     void UpdateUI()
     {
-        UI_powerCounter.text = powers.ToString();
+        UI_powerCounter.text = "Freezes: " + powers.ToString();
     }
 }

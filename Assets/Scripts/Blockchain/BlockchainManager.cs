@@ -7,33 +7,26 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
-
+using UnityEngine.Events;
 
 public class BlockchainManager : MonoBehaviour
 {
     public TMP_InputField walletInputField;
 
     public const int contractID = 56434;
-
     private const string devWalletAdress= "tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG";
-
     private const string burnWalletAdress = "tz1burnburnburnburnburnburnburjAYjjX";
 
-    public List<String> parsedStringTest;
-
     public TextMeshProUGUI textFeedback;
-
-    private List<string> cards;
-
-    public TextMeshProUGUI textWalletAdress;
     
-    public List<Root> data;
+    public List<Objkt> data;
+
+    public UnityEvent onLoad;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
  
     IEnumerator GetData_Coroutine()
     {
-        textWalletAdress.text = walletInputField.text;
         textFeedback.text = "Loading...";
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
         //https://api.tzkt.io/v1/bigmaps/56434/keys?key.address=tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG&select=key,value
@@ -53,7 +46,7 @@ public class BlockchainManager : MonoBehaviour
                 s = Validate(s);
 
                 //Deserialize the data from the JSON
-                data = JsonConvert.DeserializeObject<List<Root>>(s);
+                data = JsonConvert.DeserializeObject<List<Objkt>>(s);
                 for (int i = 0; i < data.Count; i++)
                 {
                     //Extract the user's collection data we want from the deserialized object
@@ -70,6 +63,8 @@ public class BlockchainManager : MonoBehaviour
                         Inventory.instance.ownedCards.Add(id);
                     }
                 }
+                textFeedback.text = "Success!";
+                onLoad.Invoke();
             }
         }
     }
