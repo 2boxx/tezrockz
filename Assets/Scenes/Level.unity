@@ -18200,6 +18200,7 @@ MonoBehaviour:
   selectedRockCardData: {fileID: 0}
   instanceRockCardData: {fileID: 0}
   rockCardPrefabBase: {fileID: 2735112127136984040, guid: 589f93bdead50704d9527f0e60c5ab93, type: 3}
+  rarityMeter: {fileID: 1426002573}
   rockPreview: {fileID: 1534792221}
   rockPrevieSR: {fileID: 1534792223}
   previewRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -22555,8 +22556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.02999878, y: 1.1300011}
-  m_SizeDelta: {x: -8.02, y: -35.02}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -6.382, y: -35.022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366093436
 MonoBehaviour:
@@ -23101,6 +23102,7 @@ MonoBehaviour:
   commonPercentage: 0
   epicPercentage: 0
   legendaryPercentage: 0
+  totalRocks: 0
 --- !u!1 &1428688875
 GameObject:
   m_ObjectHideFlags: 0
@@ -26598,6 +26600,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2020961441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020961443}
+  - component: {fileID: 2020961442}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2020961442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020961441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271b0c38af620c7479de432585ce2ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownedCards: 
+  activeCards: 
+--- !u!4 &2020961443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020961441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.1603804, y: 4.428777, z: 114.61967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032238990
 GameObject:
   m_ObjectHideFlags: 0
@@ -27307,7 +27354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedRockImage: {fileID: 290526371}
   samplesPerShapeText: {fileID: 1597483182}
-  rockCardsTokensPlayer: 0000000001000000020000000300000004000000
+  rockCardsTokensPlayer: 02000000030000000400000005000000070000000800000009000000
   rockCardsPlayer: []
   rockCardsGlossary:
   - {fileID: 11400000, guid: a0ed2e35bccdef24d87fa1dcd6a0a088, type: 2}
@@ -27315,6 +27362,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0fd331e73d802b146a797d9b486ae643, type: 2}
   - {fileID: 11400000, guid: 57b87898b1233194cba703cfcdb02ffd, type: 2}
   - {fileID: 11400000, guid: 8393f2f3142d0f541b14588b9f594b86, type: 2}
+  - {fileID: 11400000, guid: 516c63cf0b5ffb2438f0d2b650ac8e96, type: 2}
+  - {fileID: 11400000, guid: eac0ab4aa26f2494b89cd9577e05b11f, type: 2}
   _cardIndex: 0
 --- !u!4 &2094611260
 Transform:

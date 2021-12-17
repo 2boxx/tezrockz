@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22bde27f55e198240ab91ba5aa8f899c, type: 3}
+  m_Name: Rhyolite
+  m_EditorClassIdentifier: 
+  NFTRockCardID: 4
+  name: Rhyolite
+  rarity: 0
+  totalEditions: 500
+  currentShape: 0
+  cardSprite: {fileID: 0}
+  unitsPerShape: 0400000004000000020000000200000004000000
+  shapes:
+  - {fileID: -746313638257851167, guid: fe5acf70651eb3d4e95200d2c12e92e5, type: 3}
+  - {fileID: 1637892033447700784, guid: fe5acf70651eb3d4e95200d2c12e92e5, type: 3}
+  - {fileID: 802828809128677173, guid: fe5acf70651eb3d4e95200d2c12e92e5, type: 3}
+  - {fileID: 1521730555105379095, guid: fe5acf70651eb3d4e95200d2c12e92e5, type: 3}
+  - {fileID: -4090388787986987797, guid: fe5acf70651eb3d4e95200d2c12e92e5, type: 3}

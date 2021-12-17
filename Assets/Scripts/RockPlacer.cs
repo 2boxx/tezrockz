@@ -16,6 +16,8 @@ public class RockPlacer : MonoBehaviour
     public GameObject rockCardPrefabBase;
 
     private RockCardSelector _rockCardSelector;
+
+    public RarityMeter rarityMeter;
     
     [Header("Rock Preview")]
     public GameObject rockPreview;
@@ -89,6 +91,7 @@ public class RockPlacer : MonoBehaviour
             SpawnRock();
             _rockCount++;
             rockCountText.text = _rockCount.ToString();
+            rarityMeter.totalRocks = _rockCount;
             SelectNextRock();
         }
        
@@ -128,6 +131,9 @@ public class RockPlacer : MonoBehaviour
             _rockCardSelector.NextCard();
 
         }
+        
+        
+        rarityMeter.AddPercentage(instanceRockCardData);
 
     }
 
