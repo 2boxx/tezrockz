@@ -6,5 +6,5 @@ public class TestInventory : MonoBehaviour
 {
     public List<int> testInventory;
     
-    public List<int>
+    //public List<int>
 }
