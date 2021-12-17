@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
@@ -19,7 +20,6 @@ public class RockCardSelector : MonoBehaviour
     
 
     [Header("Player Rocks")]
-
     public List<int> rockCardsTokensPlayer;//Las cartas que tiene le jugador, esto lo llenamos con la ID que obtengamos del getToken
     public List<RockCardMonobehaviour> rockCardsPlayer;//En base a rockCardsToken, esto lo rellenamos con las cartas que tenga.
   
@@ -67,7 +67,7 @@ public class RockCardSelector : MonoBehaviour
     public void PreviousCard()
     {
         _cardIndex--;
-        if (_cardIndex <= 0)  _cardIndex = 0;
+        if (_cardIndex <= 0)  _cardIndex = rockCardsPlayer.Count-1;
         
         CheckIfIOutOfCards();
         UpdateCardRockSelected();
@@ -83,9 +83,11 @@ public class RockCardSelector : MonoBehaviour
         
         var newCard = rockCardsPlayer[_cardIndex];
         //Actualizamos el preview de la seleccion
-        selectedRockImage.sprite = newCard.shapes[rockCardsPlayer[_cardIndex].currentShape];
-        samplesPerShapeText.text = "x" + newCard.unitsPerShape[rockCardsPlayer[_cardIndex].currentShape];
-        
+        selectedRockImage.sprite = newCard.shapes[0];
+
+        var sum = newCard.unitsPerShape.Aggregate(0,(acum,current) => acum + current);//Cantidad total de unidades de rocas que quedan en esa carta
+        samplesPerShapeText.text = sum.ToString();
+      
         //Actualizamos la info de la roca que esta usando el jugador
         _rockPlacer.instanceRockCardData = rockCardsPlayer[_cardIndex];
         _rockPlacer.selectedRockCardData = newCard.myData;
