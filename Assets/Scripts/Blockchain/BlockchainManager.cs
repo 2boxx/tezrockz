@@ -9,7 +9,7 @@ using TMPro;
 using Newtonsoft.Json;
 
 
-public class BlockchainTest : MonoBehaviour
+public class BlockchainManager : MonoBehaviour
 {
     // public string currentWallet = "tz1brgKFnJLYa5xNw96sYo4Bt9oeDcwHU62R";
     public TMP_InputField walletInputField;
@@ -71,6 +71,10 @@ public class BlockchainTest : MonoBehaviour
                     int id = data[i].key.nat;
                     int amount = data[i].value;
                     
+                    //Store address
+                    Inventory.instance.currentWalletAddress = data[i].key.address;
+                    
+                    //Store inventory
                     Inventory.instance.ownedCards.Clear();
                     for (int j = 0; j < amount; j++)
                     {

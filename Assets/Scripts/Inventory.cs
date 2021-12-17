@@ -8,9 +8,9 @@ public class Inventory : MonoBehaviour
     [HideInInspector] public static Inventory instance;
 
     public List<int> ownedCards; //Static: Everything the user has on the blockchain
+    public string currentWalletAddress;
 
-
-    private void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         if (instance == null) instance = this;
