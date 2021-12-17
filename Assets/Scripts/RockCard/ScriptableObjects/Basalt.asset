@@ -18,7 +18,7 @@ MonoBehaviour:
   totalEditions: 500
   currentShape: 0
   cardSprite: {fileID: 21300000, guid: 70aae80fceb21b348957772fe3262d7e, type: 3}
-  unitsPerShape: 0400000004000000020000000200000004000000
+  unitsPerShape: 0400000001000000040000000300000004000000
   shapes:
   - {fileID: 2722435659419239599, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
   - {fileID: 5136565036704701059, guid: 269f2983de18b4542b75e2a7d2b9a535, type: 3}
