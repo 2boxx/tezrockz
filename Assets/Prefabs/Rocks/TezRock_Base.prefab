@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1372156819222169196}
   - component: {fileID: 5346318123984985770}
   - component: {fileID: 2708683053345266473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TezRock_Base
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bb2641b9ba8a74f92979e86bacb290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  rb: {fileID: 0}
   useJointSystem: 0
   hasJoint: 0
   physicsMat: {fileID: 6200000, guid: b60e24e60a33ab348a5d994b8e7c9388, type: 2}

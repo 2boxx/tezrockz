@@ -7,9 +7,9 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
  
-    SpriteRenderer _rend;
+    public SpriteRenderer sprite;
 
-    private Rigidbody2D _rb;
+    public Rigidbody2D rb;
 
     public bool useJointSystem = true;
 
@@ -19,8 +19,8 @@ public class Rock : MonoBehaviour
     
     void Start()
     {
-        _rend = GetComponent<SpriteRenderer>();
-        _rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         
         gameObject.AddComponent<PolygonCollider2D>();
         GetComponent<ResizePolygonCollider2D>().ResizeCollider();
@@ -29,13 +29,13 @@ public class Rock : MonoBehaviour
 
     private void Update()
     {
-        if (_rend.isVisible)
+        if (sprite.isVisible)
         {
-            _rb.bodyType  = RigidbodyType2D.Dynamic;
+            rb.bodyType  = RigidbodyType2D.Dynamic;
         }
         else
         {
-            _rb.bodyType  = RigidbodyType2D.Static;
+            rb.bodyType  = RigidbodyType2D.Static;
 
         }
     }
