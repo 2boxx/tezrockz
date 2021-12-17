@@ -19,9 +19,9 @@ public class RarityMeter : MonoBehaviour
     public void UpdatePercentageTexts()
     {
         if (totalRocks == 0 ) return;
-        commonText.text = (commonRocks/totalRocks)*100+"%";
-        epicText.text = (epicRocks/totalRocks)*100+"%";
-        legendaryText.text = (legendaryRocks/totalRocks)*100+"%";
+        commonText.text = commonRocks*100/totalRocks+"%";
+        epicText.text =  epicRocks*100/totalRocks+"%";
+        legendaryText.text =  legendaryRocks*100/totalRocks+"%";
     }
 
 
