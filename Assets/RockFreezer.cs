@@ -5,7 +5,7 @@ using TMPro;
 
 public class RockFreezer : MonoBehaviour
 {
-    public int powers;
+    private int powers;
     public int initialPowers;
     public LayerMask rocksLayer;
     public Color frozenColor;
@@ -15,6 +15,7 @@ public class RockFreezer : MonoBehaviour
     private void Start()
     {
         powers = initialPowers;
+        UpdateUI();
     }
 
     private void Update()
@@ -44,5 +45,11 @@ public class RockFreezer : MonoBehaviour
     void UpdateUI()
     {
         UI_powerCounter.text = "Freezes: " + powers.ToString();
+    }
+
+    public void RewardPowers()
+    {
+        powers += 1;
+        UpdateUI();
     }
 }

@@ -24,10 +24,13 @@ public class BlockchainManager : MonoBehaviour
     public UnityEvent onLoad;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
+
+    private bool cheatOn = false;
  
     IEnumerator GetData_Coroutine()
     {
         textFeedback.text = "Loading...";
+        CheckCheat();
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
         //https://api.tzkt.io/v1/bigmaps/56434/keys?key.address=tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG&select=key,value
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
@@ -40,21 +43,27 @@ public class BlockchainManager : MonoBehaviour
             else
             {
                 //Get the user input
-                string s = request.downloadHandler.text;
-
-                //Check the user isn't cheating ;)
-                s = Validate(s);
+                string json = request.downloadHandler.text;
+                string address="";
 
                 //Deserialize the data from the JSON
-                data = JsonConvert.DeserializeObject<List<Objkt>>(s);
+                data = JsonConvert.DeserializeObject<List<Objkt>>(json);
                 for (int i = 0; i < data.Count; i++)
                 {
                     //Extract the user's collection data we want from the deserialized object
                     int id = data[i].key.nat;
                     int amount = data[i].value;
-                    
+                    address = data[i].key.address;
+
+                    //Check the user isn't cheating ;)
+                    if (!Validate(address))
+                    {
+                        textFeedback.text = "Nice try! ;)";
+                        break;
+                    }
+
                     //Store the user address
-                    Inventory.instance.currentWalletAddress = data[i].key.address;
+                    Inventory.instance.currentWalletAddress = address;
                     
                     //Add the card data to the player inventory singleton
                     Inventory.instance.ownedCards.Clear();
@@ -63,17 +72,35 @@ public class BlockchainManager : MonoBehaviour
                         Inventory.instance.ownedCards.Add(id);
                     }
                 }
-                textFeedback.text = "Success!";
-                onLoad.Invoke();
+                if (Validate(address))
+                {
+                    textFeedback.text = "Success!";
+                    onLoad.Invoke();
+                }
             }
         }
     }
 
-    private string Validate(string s)
+    //Simple check to prevent the user from playing with the developer or burn address
+    private bool Validate(string s)
     {
-        if (s == devWalletAdress || s == burnWalletAdress) return "nice try! :)";
-        if (s == "moldavita") return devWalletAdress;
-        return s;
+        if (cheatOn) return true;
+        if (s == devWalletAdress || s == burnWalletAdress || s == "")
+        {
+            return false;
+        }
+        return true;
+    }
+
+    private bool CheckCheat()
+    {
+        if (walletInputField.text == "moldavita")
+        {
+            cheatOn = true;
+            walletInputField.text = devWalletAdress;
+            return true;
+        }
+        else return false;
     }
 }
 
