@@ -8225,7 +8225,7 @@ PrefabInstance:
     - target: {fileID: 5979763092799829458, guid: 5cb525f9bf1251a4ab52a74785bb28ad, type: 3}
       propertyPath: textFeedback
       value: 
-      objectReference: {fileID: 814292582}
+      objectReference: {fileID: 1751267186}
     - target: {fileID: 5979763092799829458, guid: 5cb525f9bf1251a4ab52a74785bb28ad, type: 3}
       propertyPath: walletInputField
       value: 

@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnLoseGame;
     public UnityEvent OnFinishedGame;
 
+    public bool debug_CannotLose;
+
     public void FinishedGame()
     {
+        if(debug_CannotLose) return;
         OnFinishedGame.Invoke();
     }
     
