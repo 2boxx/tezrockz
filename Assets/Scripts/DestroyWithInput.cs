@@ -12,11 +12,17 @@ public class DestroyWithInput : MonoBehaviour
 
     private void Start()
     {
-        if(destroyAtStart) StartCoroutine(DisableObjectDelay());
+        if(destroyAtStart) StartCoroutine(DestroyObjectDelay());
         
     }
+
+
+    public void DestroyInnmediate()
+    {
+        Destroy(gameObject);
+    }
     
-   IEnumerator DisableObjectDelay()
+   IEnumerator DestroyObjectDelay()
    {
        
        yield return new WaitForSeconds(delay);
