@@ -21,8 +21,8 @@ public class RocksStackHeight : MonoBehaviour
 
     
     [Header("Height Reward")]
-    public float nextReward = 10;
-    private float rewardInterval = 10;
+    public float rewardInterval = 10;
+    private float nextReward = 10;
 
     public UnityEvent onReward;
 
