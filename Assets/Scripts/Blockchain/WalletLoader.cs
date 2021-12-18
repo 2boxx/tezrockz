@@ -9,7 +9,7 @@ using TMPro;
 using Newtonsoft.Json;
 using UnityEngine.Events;
 
-public class BlockchainManager : MonoBehaviour
+public class WalletLoader : MonoBehaviour
 {
     public TMP_InputField walletInputField;
 
@@ -22,6 +22,8 @@ public class BlockchainManager : MonoBehaviour
     public List<Objkt> data;
 
     public UnityEvent onLoad;
+
+    [SerializeField] private bool preventDevWalletUsage;
     
     public void GetData() => StartCoroutine(GetData_Coroutine());
 
@@ -32,7 +34,6 @@ public class BlockchainManager : MonoBehaviour
         textFeedback.text = "Loading...";
         CheckCheat();
         string uri = "https://api.tzkt.io/v1/bigmaps/"+contractID.ToString()+"/keys?key.address="+walletInputField.text+"&select=key,value";
-        //https://api.tzkt.io/v1/bigmaps/56434/keys?key.address=tz1ePwKgTBqNktxSUNQD8mqDFwH9dPPJ21ZG&select=key,value
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
