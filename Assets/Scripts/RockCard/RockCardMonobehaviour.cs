@@ -64,7 +64,6 @@ public class RockCardMonobehaviour : MonoBehaviour
         NFTRockCardID = myData.NFTRockCardID;
         name = myData.name;
         rarity = myData.rarity;
-        totalEditions = myData.totalEditions;
         cardSprite = myData.cardSprite;
         unitsPerShape = new List<int>(myData.unitsPerShape);
         shapes = new List<Sprite>(myData.shapes); 

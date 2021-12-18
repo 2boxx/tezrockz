@@ -23,13 +23,13 @@ public class RockCardSelector : MonoBehaviour
 
     [Header("Player Rocks")]
     public List<int> rockCardsTokensPlayer;//Las cartas que tiene le jugador, esto lo llenamos con la ID que obtengamos del getToken
-    public List<RockCardMonobehaviour> rockCardsPlayer;//En base a rockCardsToken, esto lo rellenamos con las cartas que tenga.
+    public List<RockCardMonobehaviour> activeCards;//En base a rockCardsToken, esto lo rellenamos con las cartas que tenga.
   
     [Header("Rock Cards Glossary")]
     public List<RockCardData> rockCardsGlossary;//Todas las cartas del juego.
 
 
-    private void Start()
+    private void Awake()
     {
         if (loadNFTInventory) //cargamos los nft de la wallet
             rockCardsTokensPlayer = Inventory.instance.ownedCards;
@@ -54,7 +54,7 @@ public class RockCardSelector : MonoBehaviour
                     component.myData = rockCardTokenGlossary;
                     component.UpdateCardData();
                     
-                    rockCardsPlayer.Add(component);
+                    activeCards.Add(component);
 
                 }
             }
@@ -65,7 +65,7 @@ public class RockCardSelector : MonoBehaviour
     public void NextCard()
     {
         _cardIndex++;
-        if (_cardIndex >= rockCardsPlayer.Count)  _cardIndex = 0;
+        if (_cardIndex >= activeCards.Count)  _cardIndex = 0;
 
         CheckIfIOutOfCards();
         UpdateCardRockSelected();
@@ -73,7 +73,7 @@ public class RockCardSelector : MonoBehaviour
     public void PreviousCard()
     {
         _cardIndex--;
-        if (_cardIndex <= 0)  _cardIndex = rockCardsPlayer.Count-1;
+        if (_cardIndex <= 0)  _cardIndex = activeCards.Count-1;
         
         CheckIfIOutOfCards();
         UpdateCardRockSelected();
@@ -81,13 +81,13 @@ public class RockCardSelector : MonoBehaviour
 
     public void RemoveCurrentCard()
     {
-        rockCardsPlayer.RemoveAt(_cardIndex);
+        activeCards.RemoveAt(_cardIndex);
     }
     public void UpdateCardRockSelected()
     {
         if (_rockPlacer.outOfRocks) return;
         
-        var newCard = rockCardsPlayer[_cardIndex];
+        var newCard = activeCards[_cardIndex];
         //Actualizamos el preview de la seleccion
         selectedRockImage.sprite = newCard.shapes[0];
 
@@ -95,13 +95,13 @@ public class RockCardSelector : MonoBehaviour
         samplesPerShapeText.text = sum.ToString();
       
         //Actualizamos la info de la roca que esta usando el jugador
-        _rockPlacer.instanceRockCardData = rockCardsPlayer[_cardIndex];
+        _rockPlacer.instanceRockCardData = activeCards[_cardIndex];
         _rockPlacer.selectedRockCardData = newCard.myData;
     }
 
     public void CheckIfIOutOfCards()
     {
-        if (rockCardsPlayer.Count == 0)
+        if (activeCards.Count == 0)
         {
             _rockPlacer.outOfRocks = true;
             _gm.FinishedGame();

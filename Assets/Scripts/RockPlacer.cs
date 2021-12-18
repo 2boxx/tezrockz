@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class RockPlacer : MonoBehaviour
@@ -46,6 +47,9 @@ public class RockPlacer : MonoBehaviour
     public bool outOfRocks;
     public bool mouseInGame;
     public bool mouseInRock;
+
+    public UnityEvent onRockPlaced;
+    
     private void Start()
     {
         _rockCardSelector = FindObjectOfType<RockCardSelector>();
@@ -135,7 +139,7 @@ public class RockPlacer : MonoBehaviour
         
         instanceRockCardData.RandomizeCurrenShape();
         rarityMeter.AddPercentage(instanceRockCardData);
-
+        onRockPlaced.Invoke();
     }
 
     public bool CheckIfIsLastRockOfTheCard()

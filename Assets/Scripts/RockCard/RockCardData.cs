@@ -8,7 +8,6 @@ public class RockCardData : ScriptableObject
     public int NFTRockCardID;
     public string name;
     public rarities rarity;
-    public int totalEditions;
 
     public int currentShape = 0;
 
