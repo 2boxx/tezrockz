@@ -31011,7 +31011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005798a4dca5824eae7e995b95b0524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadNFTInventory: 1
   selectedRockImage: {fileID: 290526371}
   samplesPerShapeText: {fileID: 1597483182}
   rockCardsTokensPlayer: 
