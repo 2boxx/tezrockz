@@ -13,7 +13,7 @@ public class LoseOnFall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         count++;
-        if (count >= limit) gameManager.OnLoseGame.Invoke();
+        if (count >= limit && !gameManager.debug_CannotLose) gameManager.OnLoseGame.Invoke();
     }
 
     private void OnCollisionExit2D(Collision2D other)

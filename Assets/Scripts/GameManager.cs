@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     
     public void RestartLevel()
     {
-        if(debug_CannotLose) return;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
