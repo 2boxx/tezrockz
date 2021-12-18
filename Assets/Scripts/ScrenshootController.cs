@@ -15,7 +15,8 @@ public class ScrenshootController : MonoBehaviour
 
     public Image screenshootPreview;
 
-
+    public GameObject twitter;
+    
     private bool _takeScrenshoot;
 
     public GameObject UI_Screnshoot;
@@ -39,10 +40,10 @@ public class ScrenshootController : MonoBehaviour
     IEnumerator TakeScrenshootCoroutine()
     {
 
+       twitter.SetActive(true);
         yield return new WaitForEndOfFrame();
         Debug.Log("TAKE SCRENSHOOT");
        //Texture2D newScrenshoot = ScreenCapture.CaptureScreenshotAsTexture(ScreenCapture.StereoScreenCaptureMode.BothEyes);
-       
        
        // create a texture to pass to encoding
        Texture2D newScrenshoot  = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -63,6 +64,8 @@ public class ScrenshootController : MonoBehaviour
         screenshootPreview.sprite = ConvertToSprite(_screnshoot);
         screenshootPreview.preserveAspect = true;
         Destroy(newScrenshoot);
+        twitter.SetActive(false);
+
     }
 
 
