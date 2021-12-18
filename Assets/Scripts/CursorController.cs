@@ -19,6 +19,8 @@ public class CursorController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) ChangeCursor(cursorClicked);
         if (Input.GetMouseButtonUp(0)) ChangeCursor(cursorDefault);
+        if (Input.GetMouseButtonDown(1)) ChangeCursor(cursorClicked);
+        if (Input.GetMouseButtonUp(1)) ChangeCursor(cursorDefault);
     }
 
     private void ChangeCursor(Texture2D cursorType)
