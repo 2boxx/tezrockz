@@ -924,6 +924,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9096018313512918235, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
   m_PrefabInstance: {fileID: 153823279}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &153823281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096018314132194922, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
+  m_PrefabInstance: {fileID: 153823279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0725448b21d6c54d9224ae4f2187094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &156222822
 GameObject:
   m_ObjectHideFlags: 0
@@ -18935,7 +18946,19 @@ MonoBehaviour:
   mouseInRock: 0
   onRockPlaced:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 153823281}
+        m_TargetAssemblyTypeName: UI_ShowProgress, Assembly-CSharp
+        m_MethodName: AddUsedRock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &393573436
 Transform:
   m_ObjectHideFlags: 0
