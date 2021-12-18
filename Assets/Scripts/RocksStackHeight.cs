@@ -18,7 +18,6 @@ public class RocksStackHeight : MonoBehaviour
     
     [Header("Height Reward")]
     public float nextReward = 10;
-    public Image rewardIndicator;
     private float rewardInterval = 10;
 
     public UnityEvent onReward;
@@ -32,13 +31,6 @@ public class RocksStackHeight : MonoBehaviour
         heightText.text = distance + "m";
 
 
-       // float awayOfReward = nextReward - distance;
-
-       // var scaledValue = 0;
-
-       // Debug.Log(awayOfReward +": "+scaledValue.ToString("F1")); 
-        
-       // rewardIndicator.fillAmount = scaledValue;
         if (distance>= nextReward)
         {
             nextReward += rewardInterval;
