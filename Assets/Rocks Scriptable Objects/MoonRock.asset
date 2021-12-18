@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bde27f55e198240ab91ba5aa8f899c, type: 3}
   m_Name: MoonRock
   m_EditorClassIdentifier: 
-  NFTRockCardID: 2
+  NFTRockCardID: 7
   name: MoonRock
   rarity: 2
-  totalEditions: 10
   currentShape: 0
   cardSprite: {fileID: 21300000, guid: dcb325b1450828f4989b1ba589f3f7a9, type: 3}
   unitsPerShape: 010000000100000002000000

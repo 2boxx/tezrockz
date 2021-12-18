@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bde27f55e198240ab91ba5aa8f899c, type: 3}
   m_Name: Rhyolite
   m_EditorClassIdentifier: 
-  NFTRockCardID: 4
+  NFTRockCardID: 9
   name: Rhyolite
   rarity: 0
-  totalEditions: 500
   currentShape: 0
   cardSprite: {fileID: 0}
   unitsPerShape: 0400000004000000020000000200000004000000
