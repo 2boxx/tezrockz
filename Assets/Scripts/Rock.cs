@@ -29,6 +29,11 @@ public class Rock : MonoBehaviour
 
     private void Update()
     {
+        //DisableRbInHiddenRocks();
+    }
+
+    void DisableRbInHiddenRocks()
+    {
         if (sprite.isVisible)
         {
             rb.bodyType  = RigidbodyType2D.Dynamic;

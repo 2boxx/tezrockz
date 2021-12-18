@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public UnityEvent OnLoseGame;
     public UnityEvent OnFinishedGame;
 
     public void FinishedGame()
