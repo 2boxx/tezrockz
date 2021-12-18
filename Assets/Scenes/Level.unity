@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3633887578650843593, guid: ba9761cebb18d3340a9de7f3f2921b11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bb954d46c9e0f54da8684b2f674049c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19124,7 +19124,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  debug_CannotLose: 1
+  debug_CannotLose: 0
   rockFreezer: {fileID: 0}
 --- !u!82 &393573442
 AudioSource:
@@ -30322,7 +30322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3633887578650843593, guid: ba9761cebb18d3340a9de7f3f2921b11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bb954d46c9e0f54da8684b2f674049c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
