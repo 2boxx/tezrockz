@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -15,12 +16,19 @@ public class RocksStackHeight : MonoBehaviour
 
     public Transform startPoint;
 
+    public int lineAmount;
+    public GameObject heightLine;
     
     [Header("Height Reward")]
     public float nextReward = 10;
     private float rewardInterval = 10;
 
     public UnityEvent onReward;
+
+    private void Start()
+    {
+        SpawnHeightLines();
+    }
 
     private void Update()
     {
@@ -38,5 +46,19 @@ public class RocksStackHeight : MonoBehaviour
         }
     }
 
- 
+
+    public void SpawnHeightLines()
+    {
+        int acumulator = 0;
+
+
+        for (int i = 0; i < lineAmount; i++)
+        {
+            acumulator++;
+            Vector2 linePos = new Vector2(0, (rewardInterval+startPoint.position.y) * acumulator);
+            Instantiate(heightLine, linePos, quaternion.identity);
+        }
+        
+        
+    }
 }
