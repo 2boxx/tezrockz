@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,12 @@ public class RockFreezer : MonoBehaviour
     public TextMeshProUGUI UI_powerCounter;
 
     public GameObject frozenParticles;
+
     private void Start()
     {
         powers = initialPowers;
         UpdateUI();
+        GameManager.instance.rockFreezer = this;
     }
 
     private void Update()
@@ -50,7 +53,7 @@ public class RockFreezer : MonoBehaviour
         UI_powerCounter.text = "Freezes: " + powers.ToString();
     }
 
-    public void RewardPowers()
+    public void AddReward()
     {
         powers += 1;
         UpdateUI();

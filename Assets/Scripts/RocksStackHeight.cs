@@ -40,12 +40,12 @@ public class RocksStackHeight : MonoBehaviour
         heightText.text = distance + "m";
 
 
-        if (distance>= nextReward)
-        {
-            nextReward += rewardInterval;
-            onReward.Invoke();
-
-        }
+        // if (distance>= nextReward)
+        // {
+        //     nextReward += rewardInterval;
+        //     onReward.Invoke();
+        //
+        // }
     }
 
 
@@ -57,11 +57,9 @@ public class RocksStackHeight : MonoBehaviour
         for (int i = 0; i < lineAmount; i++)
         {
             acumulator++;
-            if (i == 0) continue;
             Vector2 linePos = new Vector2(0, (rewardInterval) * acumulator);
             var line = Instantiate(heightLine, linePos, quaternion.identity);
             line.transform.SetParent(startPoint);
-
         }
         
         

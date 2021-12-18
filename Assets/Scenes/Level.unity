@@ -19051,7 +19051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 393573443}
         m_TargetAssemblyTypeName: RockFreezer, Assembly-CSharp
-        m_MethodName: RewardPowers
+        m_MethodName: AddReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
