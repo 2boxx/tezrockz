@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22bde27f55e198240ab91ba5aa8f899c, type: 3}
-  m_Name: Ambar
+  m_Name: 13Ambar
   m_EditorClassIdentifier: 
   NFTRockCardID: 13
   name: Ambar
