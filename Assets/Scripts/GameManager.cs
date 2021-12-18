@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
 
     public void FinishedGame()
     {
-        if(debug_CannotLose) return;
         OnFinishedGame.Invoke();
     }
     
     public void RestartLevel()
     {
+        if(debug_CannotLose) return;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
