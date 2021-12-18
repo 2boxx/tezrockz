@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.Mathematics;
+using UnityEngine.Events;
 
 public class RockFreezer : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class RockFreezer : MonoBehaviour
     public TextMeshProUGUI UI_powerCounter;
 
     public GameObject frozenParticles;
+
+    public UnityEvent onReward;
 
     private void Start()
     {
@@ -56,6 +59,7 @@ public class RockFreezer : MonoBehaviour
     public void AddReward()
     {
         powers += 1;
+        onReward.Invoke();
         UpdateUI();
     }
 }

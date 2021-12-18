@@ -24,8 +24,6 @@ public class RocksStackHeight : MonoBehaviour
     public float rewardInterval = 10;
     private float nextReward = 10;
 
-    public UnityEvent onReward;
-
     private void Start()
     {
         SpawnHeightLines();
@@ -57,7 +55,7 @@ public class RocksStackHeight : MonoBehaviour
         for (int i = 0; i < lineAmount; i++)
         {
             acumulator++;
-            Vector2 linePos = new Vector2(0, (rewardInterval) * acumulator);
+            Vector2 linePos = new Vector2(0, (rewardInterval+startPoint.position.y) * acumulator);
             var line = Instantiate(heightLine, linePos, quaternion.identity);
             line.transform.SetParent(startPoint);
         }
