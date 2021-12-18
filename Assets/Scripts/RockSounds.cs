@@ -23,7 +23,7 @@ public class RockSounds : MonoBehaviour
          if (_audioSource.isPlaying) return;
          _audioSource.clip = hitSound;
          _audioSource.pitch = Random.Range(0.9f, 1.1f);
-         _audioSource.volume = Mathf.Clamp01(_rb.velocity.magnitude/ 20);
+         _audioSource.volume = Mathf.Clamp01(_rb.velocity.magnitude/ 2);
          _audioSource.Play();
      }
 
