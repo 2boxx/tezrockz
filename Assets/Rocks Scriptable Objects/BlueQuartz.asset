@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bde27f55e198240ab91ba5aa8f899c, type: 3}
   m_Name: BlueQuartz
   m_EditorClassIdentifier: 
-  NFTRockCardID: 8
+  NFTRockCardID: 12
   name: BlueQuartz
   rarity: 1
-  totalEditions: 2
   currentShape: 0
   cardSprite: {fileID: 21300000, guid: d3b33eb8f0a63ee4b9976062c75de5a0, type: 3}
   unitsPerShape: 0300000002000000010000000100000001000000
