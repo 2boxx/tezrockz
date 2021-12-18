@@ -901,10 +901,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9096018313895851882, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8235294
+      objectReference: {fileID: 0}
     - target: {fileID: 9096018314132194922, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
       propertyPath: cardSelector
       value: 
       objectReference: {fileID: 2094611259}
+    - target: {fileID: 9096018314132194924, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096018314507546301, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6745098
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73eb4c914de68e4f83824336e86a64b, type: 3}
 --- !u!224 &153823280 stripped
@@ -30051,7 +30063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.63, y: 0.8}
+  m_AnchoredPosition: {x: -12.4, y: 0.8}
   m_SizeDelta: {x: 27.27, y: 19.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044740848
@@ -30074,7 +30086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 896a5219ce47c124481e975f9bb4e9e2, type: 2}
   m_sharedMaterial: {fileID: 2930374497659506615, guid: 896a5219ce47c124481e975f9bb4e9e2, type: 2}
