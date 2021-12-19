@@ -3,6 +3,13 @@
 ## Tezrockz
 Tezrockz is a chill game about collecting NFT rockz and stacking them, on the tezos blockchain.
 
+Play: https://tezrockz.tez.page/
+Short Demo: https://youtu.be/msFMCgU6p1g
+
+![image](https://user-images.githubusercontent.com/56002312/146664405-5bba7677-cae6-4444-89fb-674512d0777c.png)
+
+
+
 ## A foreword about NFT Games
 
 Most NFT games have play-to-earn models incentivizing wild specualation with doubtful promises of infinite earning.
