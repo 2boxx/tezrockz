@@ -1,5 +1,9 @@
 # tezrockz
 
+## Hackathon 
+
+type in moldavita as an address  to play without buying anything (and play with the dev wallet)
+
 ## Tezrockz
 Tezrockz is a chill game about collecting NFT rockz and stacking them, on the tezos blockchain.
 
