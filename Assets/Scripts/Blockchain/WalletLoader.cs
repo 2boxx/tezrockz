@@ -45,6 +45,7 @@ public class WalletLoader : MonoBehaviour
             {
                 //Get the user input
                 string json = request.downloadHandler.text;
+                Debug.Log("Json: "+ json);
                 string address="";
 
                 //Deserialize the data from the JSON
@@ -55,6 +56,8 @@ public class WalletLoader : MonoBehaviour
                     int id = data[i].key.nat;
                     int amount = data[i].value;
                     address = data[i].key.address;
+                    
+                    Debug.Log("id: " + id + "amount: " + amount);
 
                     //Check the user isn't cheating ;)
                     if (!Validate(address))
@@ -67,7 +70,7 @@ public class WalletLoader : MonoBehaviour
                     Inventory.instance.currentWalletAddress = address;
                     
                     //Add the card data to the player inventory singleton
-                    Inventory.instance.ownedCards.Clear();
+                    //Inventory.instance.ownedCards.Clear();
                     for (int j = 0; j < amount; j++)
                     {
                         Inventory.instance.ownedCards.Add(id);
